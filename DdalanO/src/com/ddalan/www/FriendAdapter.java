@@ -27,10 +27,6 @@ public class FriendAdapter extends BaseAdapter {
 	GridView gridView;
 	
 	
-	
-	// 이미지 배열 선언
-	//ArrayList<Bitmap> picArr = new ArrayList<Bitmap>();
-	
 	// 텍스트 배열 선언
 	ArrayList<String> textArr = new ArrayList<String>();
 	
