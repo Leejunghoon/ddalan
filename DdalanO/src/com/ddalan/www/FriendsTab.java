@@ -2,6 +2,8 @@ package com.ddalan.www;
 
 import java.util.ArrayList;
 
+import com.ddalan.gcm.SendPush;
+
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -46,7 +48,8 @@ public class FriendsTab extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				System.out.println("한 번 클릭, 따란을 전송합니다.");
+				
+				new SendPush().execute();
 				Toast.makeText(getActivity(),
 						textArr.get(position) + "에게 따란을 전송합니다",
 						Toast.LENGTH_SHORT).show();
