@@ -28,7 +28,7 @@ public class FriendDialog extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.webpopup);
+		setContentView(R.layout.frienddialog);
 
 		Intent intent2 = getIntent();
 		position = intent2.getExtras().getInt("position");
