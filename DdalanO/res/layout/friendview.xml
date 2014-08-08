@@ -8,15 +8,17 @@
         android:id="@+id/frface"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/defalut" 
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:src="@drawable/defalut" />
 
     <TextView
         android:id="@+id/frname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/frface"
-        android:text="TextView" 
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:text="TextView" />
 
 </RelativeLayout>
