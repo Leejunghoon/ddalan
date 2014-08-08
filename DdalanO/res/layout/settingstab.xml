@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+  		<PreferenceScreen
+  		    android:title="@string/profil">
+  		</PreferenceScreen>   
+  
+    	<PreferenceScreen
+			android:key="ddalan"   
+			android:title="@string/push"
+			android:summary="사용중">
+			    <CheckBoxPreference
+					android:title="@string/pushview"
+					android:summary="이름과 메시지 표시"
+				/>
+				<CheckBoxPreference
+					android:title="@string/vibrate"
+				/>
+				<CheckBoxPreference	
+					android:title="@string/sound"
+				/>
+				<RingtonePreference
+					android:title="@string/ddalan"
+					android:summary="ddalan"
+					android:showDefault="true"
+					android:showSilent="true"
+				/>		
+		</PreferenceScreen>
+
+		<CheckBoxPreference
+			android:title="@string/appsound"
+		/>
+		
+		<PreferenceScreen
+  		    android:title="@string/member"
+			android:summary="사용중">
+  		</PreferenceScreen> 
+  		
+		<CheckBoxPreference
+			android:title="@string/newmember"
+			android:summary="새 따란 연락처에 대한 업데이트를 받아보세요."
+		/>
+		
+</PreferenceScreen>
