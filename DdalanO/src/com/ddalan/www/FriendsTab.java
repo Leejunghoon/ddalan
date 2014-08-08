@@ -27,7 +27,6 @@ public class FriendsTab extends Fragment {
 	ArrayList<String> numArr = new ArrayList<String>();
 	String name;
 	String number;
-	ImageView imgView;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -39,7 +38,6 @@ public class FriendsTab extends Fragment {
 		getNumber(getActivity().getContentResolver());
 
 		// 친구목록 그리드뷰에 데이터 바인딩 작업
-		imgView=(ImageView)getActivity().findViewById(R.id.frface);
 		GridView gridView = (GridView) friendView.findViewById(R.id.GridView02);
 		gridView.setAdapter(new FriendAdapter(this.getActivity(), textArr));
 		gridView.setOnItemClickListener(new OnItemClickListener() {
@@ -48,7 +46,7 @@ public class FriendsTab extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-				
+
 				new SendPush().execute();
 				Toast.makeText(getActivity(),
 						textArr.get(position) + "에게 따란을 전송합니다",
@@ -77,8 +75,10 @@ public class FriendsTab extends Fragment {
 		return friendView;
 	}// onCreateView
 
+	// 전화번호부에서 이름, 전화번호를 가져옴(ContactsContract.CommonDataKinds 이용)
 	public void getNumber(ContentResolver cr) {
-		Cursor phones = cr.query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null,
+		Cursor phones = cr.query(
+				ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null,
 				null, null);
 		// use the cursor to access the contacts
 		while (phones.moveToNext()) {
