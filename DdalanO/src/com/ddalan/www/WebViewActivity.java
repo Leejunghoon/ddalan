@@ -34,7 +34,7 @@ public class WebViewActivity extends Activity {
 	    webView.setWebViewClient(new MyWebClient());
 	    webView.loadUrl(INFO_URL);
 	    
-	  
+		new GcmRegID().getID(mContext);  // RegID 등록 확인 및 발급받기 
 	    
 	}
 	
@@ -43,7 +43,7 @@ public class WebViewActivity extends Activity {
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
 			if(url.startsWith("app")){
 				
-				new GcmRegID().getID(mContext);  // RegID 등록 확인 및 발급받기 
+			
 				
 				Intent intent = new Intent(mContext.getApplicationContext(),MainActivity.class );
 				startActivity(intent);
