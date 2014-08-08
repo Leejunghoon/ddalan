@@ -78,7 +78,7 @@ public class FriendAdapter extends BaseAdapter {
 
 					
 			
-			imageView.setImageResource(R.drawable.defalut);
+			imageView.setImageResource(R.drawable.woman);
 
 			textView.setText(textArr.get(position));
 		
