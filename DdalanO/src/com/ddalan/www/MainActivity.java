@@ -1,5 +1,7 @@
 package com.ddalan.www;
 
+import com.ddalan.www.R;
+
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
@@ -41,10 +43,10 @@ public class MainActivity extends FragmentActivity {
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 		// 탭 아이콘과 타이틀을 설정
-		Tab1 = actionBar.newTab().setIcon(R.drawable.star_add);
+		Tab1 = actionBar.newTab().setIcon(R.drawable.star);
 		Tab2 = actionBar.newTab().setIcon(R.drawable.user);
-		Tab3 = actionBar.newTab().setIcon(R.drawable.status);
-		Tab4 = actionBar.newTab().setIcon(R.drawable.setting);
+		Tab3 = actionBar.newTab().setIcon(R.drawable.stats);
+		Tab4 = actionBar.newTab().setIcon(R.drawable.set);
 
 		// 탭 리스너 설정
 		Tab1.setTabListener(new TabListener(fragmentTab1));
