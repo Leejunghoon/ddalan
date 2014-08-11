@@ -40,7 +40,7 @@ public class SendPush extends AsyncTask<String, Void, Void> {
 		public String executeClient(String regid) {
 
 			ArrayList<NameValuePair> post = new ArrayList<NameValuePair>();
-			post.add(new BasicNameValuePair("regid", regid));
+			post.add(new BasicNameValuePair("regID", regid));
 			
 		
 			// 연결 HttpClient 객체 생성

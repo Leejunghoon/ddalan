@@ -66,7 +66,7 @@ public class WebViewActivity extends Activity {
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
 			if(url.startsWith("app")){
 					
-				new AddUser(mContext).execute(user[0],user[1],user[2]);
+				new AddUser(mContext).execute(user[0],user[1],user[2]); //서버에 유저 정보 보내기
 				
 				Intent intent = new Intent(mContext.getApplicationContext(),MainActivity.class );
 				startActivity(intent);

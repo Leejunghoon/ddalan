@@ -1,8 +1,10 @@
 package com.ddalan.gcm;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 
+import com.ddalan.www.MainActivity;
 import com.google.android.gcm.GCMRegistrar;
 
 public class GcmRegID {
@@ -14,11 +16,19 @@ public class GcmRegID {
 		  //GCM DeviceID 등록
 	    final String regId = GCMRegistrar.getRegistrationId(context);
 	  	//등록된 ID가 없으면 ID값을 얻어옵니다
-	  	if (regId.equals("") || regId == null) {
+	   if(regId.equals("") || regId == null){
 	  		GCMRegistrar.register(context, SENDER_ID);
-	  	}else{
+	  }else{
 	  		Log.w(TAG, "deviceID Registered : " + regId);
 	  	}
 	  	return regId;
+	  	  	
+	}
+	
+	
+	private void unregisterToken(Context context) {
+        if (GCMRegistrar.isRegistered(context)) {
+        	GCMRegistrar.unregister(context);
+	        }
 	}
 }
