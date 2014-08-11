@@ -17,7 +17,7 @@ import com.google.android.gcm.GCMBaseIntentService;
 public class GCMIntentService extends GCMBaseIntentService {
 	private static final String TAG = "GCM";
 	private static final String SENDER_ID = "926061344928";
-	
+	public String rID;
 
 	
 	public GCMIntentService() {
@@ -44,8 +44,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 		// TODO Auto-generated method stub
 		if(!regID.equals("") || regID != null){
 			Log.w(TAG, "onRegistered!! " + regID);
-//			窜老傈价老锭 林籍贸府
-//			insertRegistrationID(regID);
+			rID = regID;
 		}
 	}
 

@@ -26,9 +26,5 @@ public class GcmRegID {
 	}
 	
 	
-	private void unregisterToken(Context context) {
-        if (GCMRegistrar.isRegistered(context)) {
-        	GCMRegistrar.unregister(context);
-	        }
-	}
+
 }

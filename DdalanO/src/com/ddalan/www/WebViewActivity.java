@@ -54,7 +54,7 @@ public class WebViewActivity extends Activity {
 	    
 	
 	
-		user[0] = new GcmRegID().getID(mContext); //regid
+		user[0] = new GCMIntentService().rID; //regid
 		user[1] =addresses[0]; // email
 		user[2] = myNumber; // phone
 	
