@@ -9,7 +9,7 @@ public class GcmRegID {
 	private static final String TAG = "GCM";
 	private static final String SENDER_ID = "926061344928";	
 	
-	public void getID(Context context){
+	public String getID(Context context){
 		
 		  //GCM DeviceID µî·Ï
 	    final String regId = GCMRegistrar.getRegistrationId(context);
@@ -19,5 +19,6 @@ public class GcmRegID {
 	  	}else{
 	  		Log.w(TAG, "deviceID Registered : " + regId);
 	  	}
+	  	return regId;
 	}
 }

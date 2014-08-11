@@ -3,6 +3,9 @@ package com.ddalan.gcm;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import java.io.IOException;
+import java.util.ArrayList;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -16,33 +19,36 @@ import org.apache.http.util.EntityUtils;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
 
 
-public class SendPush extends AsyncTask<String, Void, Void> {
+public class AddUser extends AsyncTask<String, Void, Void> {
 		
 	Context mContext;
 	
-	public SendPush(Context context){
+	public AddUser(Context context){
 		mContext = context;
 	}
 	
-	protected Void doInBackground(String... regid) {
-			 executeClient(regid[0]);
-			return null;
-			
-		}
+	protected Void doInBackground(String... user) {
+		 executeClient(user[0],user[1],user[2]);
+		return null;
+		
+	}
+	
 
 		protected void onPostExecute(String result) {
 			// 모두 작업을 마치고 실행할 일 (메소드 등등)
 		}
 		
 		// 실제 전송하는 부분
-		public String executeClient(String regid) {
+		public String executeClient(String regid,String email, String phone) {
 
 			ArrayList<NameValuePair> post = new ArrayList<NameValuePair>();
-			post.add(new BasicNameValuePair("regid", regid));
+			post.add(new BasicNameValuePair("regID", regid));
+			post.add(new BasicNameValuePair("email", email));
+			post.add(new BasicNameValuePair("phone", phone));
 			
-		
 			// 연결 HttpClient 객체 생성
 			HttpClient client = new DefaultHttpClient();
 			
@@ -53,7 +59,7 @@ public class SendPush extends AsyncTask<String, Void, Void> {
 			
 			
 			// Post객체 생성
-			HttpPost httpPost = new HttpPost("http://192.168.0.79:8080/push.do");
+			HttpPost httpPost = new HttpPost("http://192.168.0.79:8080/addUser.do");
 			
 			try {
 				UrlEncodedFormEntity entity = new UrlEncodedFormEntity(post, "UTF-8");
@@ -67,4 +73,6 @@ public class SendPush extends AsyncTask<String, Void, Void> {
 			}
 			return null;
 		}
+
+		
 }

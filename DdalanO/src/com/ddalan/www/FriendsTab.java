@@ -2,8 +2,6 @@ package com.ddalan.www;
 
 import java.util.ArrayList;
 
-import com.ddalan.gcm.SendPush;
-
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -20,9 +18,14 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.ddalan.gcm.GcmRegID;
+import com.ddalan.gcm.SendPush;
+
 public class FriendsTab extends Fragment {
 	String DISPLAY_NAME = ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME;
 	String PHONE_NUMBER = ContactsContract.CommonDataKinds.Phone.NUMBER;
+	
+		
 	ArrayList<String> textArr = new ArrayList<String>();
 	ArrayList<String> numArr = new ArrayList<String>();
 	String name;
@@ -37,6 +40,10 @@ public class FriendsTab extends Fragment {
 		// 주소록에서 이름만 가져와서 저장..
 		getNumber(getActivity().getContentResolver());
 
+		
+		//친구목록 서버에 저장
+		
+		
 		// 친구목록 그리드뷰에 데이터 바인딩 작업
 		GridView gridView = (GridView) friendView.findViewById(R.id.GridView02);
 		gridView.setAdapter(new FriendAdapter(this.getActivity(), textArr));
@@ -47,7 +54,8 @@ public class FriendsTab extends Fragment {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
-				new SendPush().execute();
+				new SendPush(getActivity()).execute(new GcmRegID().getID(getActivity()));
+				
 				Toast.makeText(getActivity(),
 						textArr.get(position) + "에게 따란을 전송합니다",
 						Toast.LENGTH_SHORT).show();
