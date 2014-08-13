@@ -16,7 +16,7 @@ import android.webkit.WebViewClient;
 
 public class WebViewActivity extends Activity {
 
-	String[] user =new String[4];
+	private String[] user =new String[4];
 	private WebView webView;
 	public Context mContext;
 	@Override

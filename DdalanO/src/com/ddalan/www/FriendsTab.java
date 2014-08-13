@@ -56,6 +56,10 @@ public class FriendsTab extends Fragment {
 
 				new SendPush(getActivity()).execute(new GcmRegID().getID(getActivity()));
 				
+				
+				 String numBer=numArr.get(position);
+				
+				
 				Toast.makeText(getActivity(),
 						textArr.get(position) + "에게 따란을 전송합니다",
 						Toast.LENGTH_SHORT).show();
