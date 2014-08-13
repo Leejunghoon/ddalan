@@ -9,7 +9,8 @@
         <Preference
             android:title="아바타 변경"
             android:key="setAvatar"/>    
-        DialogPreference를 띄우고 싶었지만ㅠㅠ 사진을 넣을 수가 없었다. 그래서 결국 액티비티 다이얼로그를 띄움. -->
+        DialogPreference를 띄우고 싶었지만ㅠㅠ 사진을 넣을 수가 없었다. 그래서 결국 액티비티 다이얼로그를 띄움.
+        -->
 
         <com.ddalan.www.ProfilePref
             android:dialogIcon="@drawable/woman"
@@ -20,16 +21,16 @@
             android:summary="친구들에게 보여줄 아바타를 바꿔보세요."
             android:title="아바타 설정" />
 
-        <SwitchPreference android:title="@string/newmember" />
+        <SwitchPreference android:title="@string/allowAutoSync" />
     </PreferenceCategory>
 
     <!-- 알림 관리 -->
 
-    <PreferenceCategory android:title="@string/push" >
+    <PreferenceCategory android:title="@string/notification" >
 
         <SwitchPreference
             android:key="allowPush"
-            android:title="@string/pushview" />
+            android:title="@string/push" />
 
         <SwitchPreference
             android:key="allowVibration"
