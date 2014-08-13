@@ -1,13 +1,20 @@
 package com.ddalan.www;
 
+import com.ddalan.gcm.AddUser;
+import com.ddalan.gcm.GcmRegID;
 import com.ddalan.www.R;
 
+import android.accounts.Account;
+import android.accounts.AccountManager;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -59,6 +66,11 @@ public class MainActivity extends FragmentActivity {
 		actionBar.addTab(Tab2);
 		actionBar.addTab(Tab3);
 		actionBar.addTab(Tab4);
+
+	
+
+		
+																	
 
 	}
 

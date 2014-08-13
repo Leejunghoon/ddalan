@@ -17,8 +17,7 @@ import com.google.android.gcm.GCMBaseIntentService;
 public class GCMIntentService extends GCMBaseIntentService {
 	private static final String TAG = "GCM";
 	private static final String SENDER_ID = "926061344928";
-	public String rID;
-
+	
 	
 	public GCMIntentService() {
 		super(SENDER_ID);
@@ -43,8 +42,8 @@ public class GCMIntentService extends GCMBaseIntentService {
 	protected void onRegistered(Context context, String regID) {
 		// TODO Auto-generated method stub
 		if(!regID.equals("") || regID != null){
+			
 			Log.w(TAG, "onRegistered!! " + regID);
-			rID = regID;
 		}
 	}
 
@@ -83,4 +82,6 @@ public class GCMIntentService extends GCMBaseIntentService {
 		notificationManager.notify(0, notification);
 	}
 	
+	
+
 }

@@ -1079,23 +1079,26 @@ containing a value of this type.
         public static final int abc_textfield_searchview_right_holo_light=0x7f020056;
         public static final int btn=0x7f020057;
         public static final int cart=0x7f020058;
-        public static final int defalut=0x7f020059;
-        public static final int heart=0x7f02005a;
-        public static final int ic_launcher=0x7f02005b;
-        public static final int man=0x7f02005c;
-        public static final int phone=0x7f02005d;
-        public static final int sample_1=0x7f02005e;
-        public static final int sample_2=0x7f02005f;
-        public static final int sample_3=0x7f020060;
-        public static final int sample_4=0x7f020061;
-        public static final int setting=0x7f020062;
-        public static final int splash=0x7f020063;
-        public static final int star=0x7f020064;
-        public static final int star_add=0x7f020065;
-        public static final int status=0x7f020066;
-        public static final int tab1=0x7f020067;
-        public static final int user=0x7f020068;
-        public static final int woman=0x7f020069;
+        public static final int ddalan=0x7f020059;
+        public static final int defalut=0x7f02005a;
+        public static final int heart=0x7f02005b;
+        public static final int ic_launcher=0x7f02005c;
+        public static final int man=0x7f02005d;
+        public static final int phone=0x7f02005e;
+        public static final int sample_1=0x7f02005f;
+        public static final int sample_2=0x7f020060;
+        public static final int sample_3=0x7f020061;
+        public static final int sample_4=0x7f020062;
+        public static final int set=0x7f020063;
+        public static final int setting=0x7f020064;
+        public static final int splash=0x7f020065;
+        public static final int star=0x7f020066;
+        public static final int star_add=0x7f020067;
+        public static final int stats=0x7f020068;
+        public static final int status=0x7f020069;
+        public static final int tab1=0x7f02006a;
+        public static final int user=0x7f02006b;
+        public static final int woman=0x7f02006c;
     }
     public static final class id {
         public static final int GridView02=0x7f05004f;
@@ -1242,7 +1245,7 @@ containing a value of this type.
         public static final int frienddialog=0x7f03001a;
         public static final int friendstab=0x7f03001b;
         public static final int friendview=0x7f03001c;
-        public static final int settiingtab=0x7f03001d;
+        public static final int settingstab=0x7f03001d;
         public static final int splash=0x7f03001e;
         public static final int statustab=0x7f03001f;
         public static final int support_simple_spinner_dropdown_item=0x7f030020;
@@ -1297,6 +1300,15 @@ containing a value of this type.
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000b;
         public static final int action_settings=0x7f0a000e;
         public static final int app_name=0x7f0a000d;
+        public static final int appsound=0x7f0a0017;
+        public static final int ddalan=0x7f0a0016;
+        public static final int member=0x7f0a0018;
+        public static final int newmember=0x7f0a0019;
+        public static final int profil=0x7f0a0011;
+        public static final int push=0x7f0a0012;
+        public static final int pushview=0x7f0a0013;
+        public static final int sound=0x7f0a0015;
+        public static final int vibrate=0x7f0a0014;
     }
     public static final class style {
         /** 

@@ -43,7 +43,7 @@ public class AddUser extends AsyncTask<String, Void, Void> {
 		
 		// 실제 전송하는 부분
 		public String executeClient(String regid,String email, String phone) {
-
+			
 			ArrayList<NameValuePair> post = new ArrayList<NameValuePair>();
 			post.add(new BasicNameValuePair("regID", regid));
 			post.add(new BasicNameValuePair("email", email));

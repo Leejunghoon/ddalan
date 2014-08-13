@@ -45,7 +45,6 @@
             android:theme="@android:style/Theme.Dialog"
             android:windowSoftInputMode="stateHidden" >
         </activity>
-        
         <activity android:name="com.ddalan.www.WebViewActivity" />
         
         <activity android:name="com.ddalan.www.MainActivity" >
