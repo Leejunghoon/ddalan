@@ -1,43 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
-  		<PreferenceScreen
-  		    android:title="@string/profil">
-  		</PreferenceScreen>   
-  
-    	<PreferenceScreen
-			android:key="ddalan"   
-			android:title="@string/push"
-			android:summary="사용중">
-			    <CheckBoxPreference
-					android:title="@string/pushview"
-					android:summary="이름과 메시지 표시"
-				/>
-				<CheckBoxPreference
-					android:title="@string/vibrate"
-				/>
-				<CheckBoxPreference	
-					android:title="@string/sound"
-				/>
-				<RingtonePreference
-					android:title="@string/ddalan"
-					android:summary="ddalan"
-					android:showDefault="true"
-					android:showSilent="true"
-				/>		
-		</PreferenceScreen>
 
-		<CheckBoxPreference
-			android:title="@string/appsound"
-		/>
-		
-		<PreferenceScreen
-  		    android:title="@string/member"
-			android:summary="사용중">
-  		</PreferenceScreen> 
-  		
-		<CheckBoxPreference
-			android:title="@string/newmember"
-			android:summary="새 따란 연락처에 대한 업데이트를 받아보세요."
-		/>
-		
+    <!-- 프로필 관리 -->
+
+    <PreferenceCategory android:title="개인정보" >
+
+        <!--
+        <Preference
+            android:title="아바타 변경"
+            android:key="setAvatar"/>    
+        DialogPreference를 띄우고 싶었지만ㅠㅠ 사진을 넣을 수가 없었다. 그래서 결국 액티비티 다이얼로그를 띄움. -->
+
+        <com.ddalan.www.ProfilePref
+            android:dialogIcon="@drawable/woman"
+            android:dialogMessage="이 부분에 사진을 넣고싶다"
+            android:key="setAvatar"
+            android:negativeButtonText="취소"
+            android:positiveButtonText="확인"
+            android:summary="친구들에게 보여줄 아바타를 바꿔보세요."
+            android:title="아바타 설정" />
+
+        <SwitchPreference android:title="@string/newmember" />
+    </PreferenceCategory>
+
+    <!-- 알림 관리 -->
+
+    <PreferenceCategory android:title="@string/push" >
+
+        <SwitchPreference
+            android:key="allowPush"
+            android:title="@string/pushview" />
+
+        <SwitchPreference
+            android:key="allowVibration"
+            android:title="@string/vibrate" />
+
+        <SwitchPreference
+            android:disableDependentsState="true"
+            android:key="allowSound"
+            android:title="@string/sound" />
+
+        <RingtonePreference
+            android:key="selectRingtone"
+            android:ringtoneType="notification"
+            android:showDefault="true"
+            android:showSilent="true"
+            android:title="@string/ddalan" />
+    </PreferenceCategory>
+
 </PreferenceScreen>
