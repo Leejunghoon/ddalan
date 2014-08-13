@@ -3,7 +3,7 @@
 
     <!-- 프로필 관리 -->
 
-    <PreferenceCategory android:title="개인정보" >
+    <PreferenceCategory android:title="개인 정보" >
 
         <!--
         <Preference
@@ -21,12 +21,14 @@
             android:summary="친구들에게 보여줄 아바타를 바꿔보세요."
             android:title="아바타 설정" />
 
-        <SwitchPreference android:title="@string/allowAutoSync" />
+        <SwitchPreference 
+            android:title="@string/allowAutoSync" />
     </PreferenceCategory>
 
     <!-- 알림 관리 -->
 
-    <PreferenceCategory android:title="@string/notification" >
+    <PreferenceCategory 
+        android:title="@string/notification" >
 
         <SwitchPreference
             android:key="allowPush"

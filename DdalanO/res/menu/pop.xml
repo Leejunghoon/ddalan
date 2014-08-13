@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="D" android:id="@+id/one"/>
-    <item android:title="DDA" android:id="@+id/two"/>
+    <item android:title="DDAN" android:id="@+id/one"/>
+    <item android:title="DDALAN" android:id="@+id/two"/>
     <item android:title="CALL" android:id="@+id/three"/>
     <item android:title="FAV ADD" android:id="@+id/four"/>
     

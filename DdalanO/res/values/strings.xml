@@ -3,16 +3,13 @@
 
     <string name="app_name">따란</string>
     <string name="action_settings">Settings</string>
-    <string name="Fragment3">This is Fragment 3</string>
-    <string name="Fragment4">This is Fragment 4</string>
-	<string name="profil">프로필</string>
+    <string name="stats">관심도</string>
 	<string name="push">알림</string>
 	<string name="pushview">알림 미리 보기</string>
 	<string name="vibrate">진동</string>
 	<string name="sound">소리</string>
 	<string name="ddalan">알림음</string>
-	<string name="appsound">앱 내 소리</string>
-	<string name="member">동기화된 연락처</string>
-	<string name="newmember">새 연락처</string>
+	<string name="allowAutoSync">새 연락처</string>
+	<string name="notification">알림 설정</string>
     
 </resources>
