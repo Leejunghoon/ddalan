@@ -41,7 +41,7 @@ public class FriendDialog extends Activity {
 		numberView.setText(number);
 
 		imgView = (ImageView) findViewById(R.id.photospace);
-		imgView.setImageResource(R.drawable.defalut);
+		imgView.setImageResource(R.drawable.woman);
 
 	}
 

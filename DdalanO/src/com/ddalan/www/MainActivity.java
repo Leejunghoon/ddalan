@@ -39,8 +39,10 @@ public class MainActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
+		class Sp{}
+		
 		ActionBar actionBar = getActionBar();
-
+		
 		// 액션바의 기본로고아이콘 숨기기 _이것을 생략하면 오류 발생
 		actionBar.setDisplayShowHomeEnabled(false);
 		// 액션바의 기본타이틀 숨기기 _이것을 생략하면 오류 발생

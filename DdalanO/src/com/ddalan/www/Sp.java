@@ -4,6 +4,7 @@ package com.ddalan.www;
 import com.ddalan.gcm.GcmRegID;
 import com.google.android.gcm.GCMRegistrar;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -20,6 +21,11 @@ public class Sp extends Activity implements Runnable{
 	protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 
+			ActionBar actionBar = getActionBar();
+			
+			//¾×¼Ç¹Ù ¼û±è!
+			actionBar.hide();
+			
 			setContentView(R.layout.splash);
 			
 			(new Thread(this)).start();
@@ -30,7 +36,7 @@ public class Sp extends Activity implements Runnable{
 			public void run() {
 				// 3ÃÊ µô·¹ÀÌ
 				try {
-					Thread.sleep(4000);
+					Thread.sleep(3000);
 				} catch (Exception e) {}
 
 				// ´ÙÀÌ¾ó·Î±× ´ÝÀ½
