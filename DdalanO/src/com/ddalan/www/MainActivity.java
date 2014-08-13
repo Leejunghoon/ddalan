@@ -11,6 +11,7 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.telephony.TelephonyManager;
@@ -39,20 +40,19 @@ public class MainActivity extends FragmentActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		class Sp{}
 		
 		ActionBar actionBar = getActionBar();
-		
+	
 		// 액션바의 기본로고아이콘 숨기기 _이것을 생략하면 오류 발생
-		actionBar.setDisplayShowHomeEnabled(false);
+		actionBar.setDisplayShowHomeEnabled(true);
 		// 액션바의 기본타이틀 숨기기 _이것을 생략하면 오류 발생
-		actionBar.setDisplayShowTitleEnabled(false);
+		actionBar.setDisplayShowTitleEnabled(true);
 		// 가장 중요한 ActionBar모드를 ActionBar.NAVIGATION_MODE_TABS로 설정해주면 간단하게 탭을
 		// 구현할수 있다.
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 		// 탭 아이콘과 타이틀을 설정
-		Tab1 = actionBar.newTab().setIcon(R.drawable.star);
+		Tab1 = actionBar.newTab().setIcon(R.drawable.fav);
 		Tab2 = actionBar.newTab().setIcon(R.drawable.user);
 		Tab3 = actionBar.newTab().setIcon(R.drawable.stats);
 		Tab4 = actionBar.newTab().setIcon(R.drawable.set);

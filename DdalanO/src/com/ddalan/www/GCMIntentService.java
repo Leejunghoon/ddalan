@@ -71,7 +71,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 		PendingIntent pendingIntent1 = PendingIntent.getActivity(context, 0, new Intent(), 0);
 		
 		Notification notification = new Notification();
-		notification.icon = R.drawable.defalut;  // 푸쉬 메세지 전송 이미지
+		notification.icon = R.drawable.push;  // 푸쉬 메세지 전송 이미지
 		notification.tickerText = ticker;
 		notification.when = System.currentTimeMillis();
 		notification.vibrate = new long[] { 500, 100, 500, 100 };
