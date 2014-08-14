@@ -16,7 +16,7 @@ public class FriendDialog extends Activity {
 	String regId;
 	TextView nameView;
 	TextView numberView;
-	ImageView imgView;
+	ImageView imageView;
 	int position;
 	String number;
 	int photoFromIntent;
@@ -42,8 +42,47 @@ public class FriendDialog extends Activity {
 		nameView.setText(name);
 		numberView.setText(number);
 
-		imgView = (ImageView) findViewById(R.id.photospace);
-		imgView.setImageResource(FriendAdapter.pic);
+		imageView = (ImageView) findViewById(R.id.photospace);
+		
+		switch (photoFromIntent) {
+		
+		case 0:
+			imageView.setImageResource(R.drawable.man5);
+			break;
+			
+		case 1:
+			imageView.setImageResource(R.drawable.man6);
+			break;
+
+		case 2:
+			imageView.setImageResource(R.drawable.man7);
+			break;
+			
+		case 3:
+			imageView.setImageResource(R.drawable.man8);
+			break;
+			
+		case 4:
+			imageView.setImageResource(R.drawable.man9);
+			break;
+			
+		case 5:
+			imageView.setImageResource(R.drawable.woman5);
+			break;
+			
+		case 6:
+			imageView.setImageResource(R.drawable.woman6);
+			break;
+			
+		case 7:
+			imageView.setImageResource(R.drawable.woman7);
+			break;
+			
+		default:
+			imageView.setImageResource(R.drawable.woman8);
+			break;
+			
+		}
 
 	}
 

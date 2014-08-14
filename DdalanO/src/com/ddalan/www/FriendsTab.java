@@ -105,7 +105,7 @@ public class FriendsTab extends Fragment {
 				intent.putExtra("position", position);
 				intent.putExtra("name", textArr.get(position));
 				intent.putExtra("number", numArr.get(position));
-				intent.putExtra("dialogpic", FriendAdapter.pic);
+				intent.putExtra("dialogpic", picNo);
 				startActivity(intent);
 				return false;
 			}

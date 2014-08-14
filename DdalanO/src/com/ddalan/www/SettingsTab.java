@@ -2,8 +2,10 @@ package com.ddalan.www;
 
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceFragment;
+import android.preference.SwitchPreference;
 import android.widget.Toast;
 
 public class SettingsTab extends PreferenceFragment {
@@ -31,13 +33,11 @@ public class SettingsTab extends PreferenceFragment {
 
 			@Override
 			public boolean onPreferenceClick(Preference preference) {
-				Toast.makeText(getActivity(), "친구 목록을 동기화합니다.",
+				Toast.makeText(getActivity(), "친구 목록을 동기화합니다.!",
 						Toast.LENGTH_SHORT).show();
 				return false;
 			}
 		});
-
 	}
-
 
 }

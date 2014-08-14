@@ -50,9 +50,12 @@ public class FriendAdapter extends BaseAdapter {
 	}
 
 	public int getPhoneLastNumber(int position) {
-		String pNo = (numArr.get(position)).substring(10);
-		System.out.println(pNo);
-		int lastNum = Integer.parseInt(pNo);
+		int lastNum = 0;
+		String pNo = null;
+
+		pNo = numArr.get(position).substring(
+				(numArr.get(position).length()) - 1);
+		lastNum = Integer.parseInt(pNo);
 		return lastNum;
 	}
 
@@ -71,65 +74,47 @@ public class FriendAdapter extends BaseAdapter {
 		textView = (TextView) convertView.findViewById(R.id.frname);
 
 		switch (getPhoneLastNumber(position)) {
+
 		case 0:
-			pic = R.drawable.man5;
-			imageView.setImageResource(pic);
-			//imageView.setImageResource(R.drawable.man5);
-
+			imageView.setImageResource(R.drawable.man5);
 			break;
-		case 1:
-			pic = R.drawable.man6;
-			imageView.setImageResource(pic);
-		//	imageView.setImageResource(R.drawable.man6);
 
+		case 1:
+			imageView.setImageResource(R.drawable.man6);
 			break;
 
 		case 2:
-			pic = R.drawable.man7;			
-			imageView.setImageResource(pic);
-		//	imageView.setImageResource(R.drawable.man7);
-
+			imageView.setImageResource(R.drawable.man7);
 			break;
+
 		case 3:
-			pic = R.drawable.man8;
-			imageView.setImageResource(pic);
-	//		imageView.setImageResource(R.drawable.man8);
-
+			imageView.setImageResource(R.drawable.man8);
 			break;
+
 		case 4:
-			pic = R.drawable.man9;
-			imageView.setImageResource(pic);
-		//	imageView.setImageResource(R.drawable.man9);
-
+			imageView.setImageResource(R.drawable.man9);
 			break;
+
 		case 5:
-			pic = R.drawable.woman5;
-			imageView.setImageResource(pic);
-		//	imageView.setImageResource(R.drawable.woman5);
-
+			imageView.setImageResource(R.drawable.woman5);
 			break;
+
 		case 6:
-			pic = R.drawable.woman6;
-			imageView.setImageResource(pic);
-	//		imageView.setImageResource(R.drawable.woman6);
-
+			imageView.setImageResource(R.drawable.woman6);
 			break;
+
 		case 7:
-			pic = R.drawable.woman7;
-			imageView.setImageResource(pic);
-
+			imageView.setImageResource(R.drawable.woman7);
 			break;
+
 		default:
-			pic = R.drawable.woman8;
-			imageView.setImageResource(pic);
-		//	imageView.setImageResource(R.drawable.woman8);
-
+			imageView.setImageResource(R.drawable.woman8);
 			break;
+
 		}
 
 		textView.setText(textArr.get(position));
 
 		return convertView;
 	}
-
 }
