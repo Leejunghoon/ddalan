@@ -33,6 +33,7 @@ public class FriendsTab extends Fragment {
 	ArrayList<String> numArr = new ArrayList<String>();
 	String name;
 	String number;
+	boolean spreadList; //친구 목록을 false일 때 한 번만 불러오고, 불러온 뒤에는 true로 바꾸게 설정
 	
 	// ////사운드//////
 	SoundPool mPool;
@@ -48,7 +49,11 @@ public class FriendsTab extends Fragment {
 		View friendView = inflater.inflate(R.layout.friendstab, container,
 				false);
 		// 주소록에서 이름만 가져와서 저장..
-		getNumber(getActivity().getContentResolver());
+		if(spreadList==false){
+			getNumber(getActivity().getContentResolver());
+			spreadList=true;
+			
+		}
 
 		// ////////////////////사운드//////////////////////////
 		mPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
