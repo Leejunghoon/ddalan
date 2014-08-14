@@ -4,44 +4,31 @@
     <!-- 프로필 관리 -->
 
     <PreferenceCategory android:title="개인 정보" >
-
-        <!--
-        <Preference
-            android:title="아바타 변경"
-            android:key="setAvatar"/>    
-        DialogPreference를 띄우고 싶었지만ㅠㅠ 사진을 넣을 수가 없었다. 그래서 결국 액티비티 다이얼로그를 띄움.
-        -->
-
         <com.ddalan.www.ProfilePref
-            android:dialogIcon="@drawable/woman"
+            android:dialogIcon="@drawable/push"
             android:dialogMessage="이 부분에 사진을 넣고싶다"
             android:key="setAvatar"
             android:negativeButtonText="취소"
             android:positiveButtonText="확인"
-            android:summary="친구들에게 보여줄 아바타를 바꿔보세요."
-            android:title="아바타 설정" />
-
-        <SwitchPreference 
-            android:title="@string/allowAutoSync" />
+            android:summary="친구들에게 보여줄 프로필사진을 바꿔보세요."
+            android:title="프로필 설정" />
     </PreferenceCategory>
 
+    <PreferenceCategory android:title="친구 관리" >
+
+        <Preference
+            android:id="@+id/synchronize"
+            android:key="syncList"
+            android:title="친구목록 동기화하기" >
+        </Preference>
+    </PreferenceCategory>
     <!-- 알림 관리 -->
 
-    <PreferenceCategory 
-        android:title="@string/notification" >
+    <PreferenceCategory android:title="@string/notification" >
 
         <SwitchPreference
             android:key="allowPush"
             android:title="@string/push" />
-
-        <SwitchPreference
-            android:key="allowVibration"
-            android:title="@string/vibrate" />
-
-        <SwitchPreference
-            android:disableDependentsState="true"
-            android:key="allowSound"
-            android:title="@string/sound" />
 
         <RingtonePreference
             android:key="selectRingtone"
