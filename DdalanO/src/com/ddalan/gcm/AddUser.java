@@ -3,9 +3,6 @@ package com.ddalan.gcm;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -19,7 +16,6 @@ import org.apache.http.util.EntityUtils;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.util.Log;
 
 
 public class AddUser extends AsyncTask<String, Void, Void> {

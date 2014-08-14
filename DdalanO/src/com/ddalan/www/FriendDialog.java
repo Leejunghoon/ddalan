@@ -19,6 +19,7 @@ public class FriendDialog extends Activity {
 	ImageView imgView;
 	int position;
 	String number;
+	int photoFromIntent;
 
 	public FriendDialog() {
 		System.out.println("WebDialog의 디폴트 생성자 안");
@@ -34,6 +35,7 @@ public class FriendDialog extends Activity {
 		position = intent2.getExtras().getInt("position");
 		name = intent2.getExtras().getString("name");
 		number = intent2.getExtras().getString("number");
+		photoFromIntent = intent2.getExtras().getInt("dialogpic");
 
 		nameView = (TextView) findViewById(R.id.namespace);
 		numberView = (TextView) findViewById(R.id.numberspace);
@@ -41,7 +43,7 @@ public class FriendDialog extends Activity {
 		numberView.setText(number);
 
 		imgView = (ImageView) findViewById(R.id.photospace);
-		imgView.setImageResource(R.drawable.woman);
+		imgView.setImageResource(FriendAdapter.pic);
 
 	}
 

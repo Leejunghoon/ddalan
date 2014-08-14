@@ -1,10 +1,8 @@
 package com.ddalan.gcm;
 
 import android.content.Context;
-import android.content.Intent;
 import android.util.Log;
 
-import com.ddalan.www.MainActivity;
 import com.google.android.gcm.GCMRegistrar;
 
 public class GcmRegID {
