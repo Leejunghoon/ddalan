@@ -12,6 +12,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.telephony.TelephonyManager;
@@ -42,6 +43,8 @@ public class MainActivity extends FragmentActivity {
 
 		
 		ActionBar actionBar = getActionBar();
+		
+		actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffcd00")));
 	
 		// 액션바의 기본로고아이콘 숨기기 _이것을 생략하면 오류 발생
 		actionBar.setDisplayShowHomeEnabled(true);
