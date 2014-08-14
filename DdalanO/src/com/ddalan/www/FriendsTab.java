@@ -79,9 +79,9 @@ public class FriendsTab extends Fragment {
 				new SendPush(getActivity()).execute(new GcmRegID().getID(getActivity()));
 				
 				// ////////////사운드재생///////////////
-				mPool.play(mDdok, 1, 1, 0, 0, 1);
+			//	mPool.play(mDdok, 1, 1, 0, 0, 1);
 				// /////////////진동재생///////////////
-				mVib.vibrate(500);
+			//	mVib.vibrate(500);
 				
 				 String numBer=numArr.get(position);
 				

@@ -2,25 +2,13 @@ package com.ddalan.www;
 
 import java.util.ArrayList;
 
-
-
-import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.Context;
-import android.database.Cursor;
-import android.database.DataSetObserver;
-import android.graphics.Bitmap;
-import android.net.Uri;
-import android.provider.ContactsContract;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView.FindListener;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
 import android.widget.TextView;
 
 public class FriendAdapter extends BaseAdapter {
@@ -74,7 +62,7 @@ public class FriendAdapter extends BaseAdapter {
 
 					
 			
-			imageView.setImageResource(R.drawable.woman);
+			imageView.setImageResource(R.drawable.woman7);
 
 			textView.setText(textArr.get(position));
 		
