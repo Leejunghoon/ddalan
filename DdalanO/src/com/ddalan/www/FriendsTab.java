@@ -4,9 +4,13 @@ import java.util.ArrayList;
 
 import android.app.Fragment;
 import android.content.ContentResolver;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +19,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.ddalan.gcm.GcmRegID;
@@ -30,6 +33,13 @@ public class FriendsTab extends Fragment {
 	ArrayList<String> numArr = new ArrayList<String>();
 	String name;
 	String number;
+	
+	// ////사운드//////
+	SoundPool mPool;
+	int mDdok;
+
+	// ////진동//////
+	Vibrator mVib;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -40,6 +50,13 @@ public class FriendsTab extends Fragment {
 		// 주소록에서 이름만 가져와서 저장..
 		getNumber(getActivity().getContentResolver());
 
+		// ////////////////////사운드//////////////////////////
+		mPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
+		mDdok = mPool.load(getActivity(), R.raw.ddaran, 1);
+
+		// /////////////////////진동//////////////////////////
+		mVib = (Vibrator) getActivity().getSystemService(
+				Context.VIBRATOR_SERVICE);
 		
 		//친구목록 서버에 저장
 		
@@ -56,6 +73,10 @@ public class FriendsTab extends Fragment {
 
 				new SendPush(getActivity()).execute(new GcmRegID().getID(getActivity()));
 				
+				// ////////////사운드재생///////////////
+				mPool.play(mDdok, 1, 1, 0, 0, 1);
+				// /////////////진동재생///////////////
+				mVib.vibrate(500);
 				
 				 String numBer=numArr.get(position);
 				
