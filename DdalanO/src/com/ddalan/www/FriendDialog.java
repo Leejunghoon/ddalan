@@ -43,6 +43,8 @@ public class FriendDialog extends Activity {
 		numberView.setText(number);
 
 		imageView = (ImageView) findViewById(R.id.photospace);
+
+		
 		
 		switch (photoFromIntent) {
 		
@@ -110,6 +112,5 @@ public class FriendDialog extends Activity {
 			break;
 
 		}
-
 	}
 }
