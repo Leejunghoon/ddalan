@@ -2,23 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_orange_light"
     android:orientation="vertical"
-    android:weightSum="1" >
+    android:weightSum="1"
+    android:paddingTop="10dp" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0.1"
-        android:background="@android:color/holo_orange_light"
+        android:background="@android:color/background_light"
         android:contentDescription="첫번째 여백"
         android:orientation="horizontal" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.3"
-        android:background="@android:color/holo_orange_light"
+        android:layout_weight="0.35"
         android:contentDescription="랭커 1,2,3위 표시하는 레이아웃"
         android:orientation="horizontal"
         android:weightSum="1" >
@@ -36,7 +35,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.4"
-            android:background="@android:color/holo_orange_light"
             android:contentDescription="랭커 2,3위 묶음"
             android:orientation="vertical"
             android:weightSum="1" >
@@ -64,41 +62,32 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="0.05"
-        android:background="@android:color/holo_orange_light"
+        android:layout_weight="0.1"
+        android:background="@android:color/background_dark"
         android:contentDescription="두번째 여백"
         android:orientation="horizontal" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.15"
-        android:background="@android:color/holo_orange_light"
+        android:layout_weight="0.45"
         android:contentDescription="즐겨찾기한 친구 목록"
         android:orientation="horizontal"
-        android:weightSum="1" >
+        android:weightSum="1"
+        android:paddingBottom="10dp">
 
-    <GridView
-        android:paddingTop="15dp"
-        android:id="@+id/grid"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:columnWidth="90dp"
-        android:gravity="center"
-        android:horizontalSpacing="10dp"
-        android:numColumns="auto_fit"
-        android:stretchMode="columnWidth"
-        android:verticalSpacing="10dp"  >
-        
-    </GridView>
-        
+        <GridView
+            android:id="@+id/grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnWidth="90dp"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:numColumns="auto_fit"
+            android:paddingTop="5dp"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp" >
+        </GridView>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.05"
-        android:background="@android:color/holo_orange_light"
-        android:contentDescription="세번째 여백"
-        android:orientation="horizontal" />
 </LinearLayout>
