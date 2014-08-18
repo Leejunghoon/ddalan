@@ -14,7 +14,6 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
-import org.apache.http.util.EntityUtils;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -64,7 +63,7 @@ public class SendPush extends AsyncTask<String, Void, Void> {
 				
 				content = respone.getEntity().getContent();
 				
-				return content;
+				return null;
 			} catch (ClientProtocolException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
