@@ -81,9 +81,7 @@ public class FriendsTab extends Fragment {
 				// mPool.play(mDdok, 1, 1, 0, 0, 1);
 				// /////////////진동재생///////////////
 				// mVib.vibrate(500);
-
-				String numBer = numArr.get(position);
-
+				
 				Toast.makeText(getActivity(),
 						textArr.get(position) + "에게 따란을 전송합니다",
 						Toast.LENGTH_SHORT).show();
@@ -98,8 +96,8 @@ public class FriendsTab extends Fragment {
 					int position, long id) {
 
 				System.out.println("길게 누름, " + position + "번 선택됨.");
-				String picStr = numArr.get(position).substring(10);
-				int picNo = Integer.parseInt(picStr);
+				String picStr = numArr.get(position);
+				int picNo = Integer.parseInt(picStr.substring(picStr.length()-1));
 				// 투명한 액티비티(WebDialog) 액티비티를 시작한다.
 				Intent intent = new Intent(getActivity(), FriendDialog.class);
 				intent.putExtra("position", position);
