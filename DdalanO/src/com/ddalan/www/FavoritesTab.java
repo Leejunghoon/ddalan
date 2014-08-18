@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.LayoutInflater;
@@ -32,7 +31,7 @@ public class FavoritesTab extends Fragment {
 		View friendView = inflater.inflate(R.layout.favoritestab, container,
 				false);
 		// 주소록에서 이름만 가져와서 저장..
-		getNumber(getActivity().getContentResolver());
+		getFavNumber(getActivity().getContentResolver());
 
 		// 친구목록 그리드뷰에 데이터 바인딩 작업
 		GridView gridView = (GridView) friendView.findViewById(R.id.grid);
@@ -75,21 +74,23 @@ public class FavoritesTab extends Fragment {
 		return friendView;
 	}
 
-	public void getNumber(ContentResolver cr) {
-		Cursor phones = cr.query(
-				ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null,
-				null, null);
-		// use the cursor to access the contacts
-		while (phones.moveToNext()) {
-			name = phones
-					.getString(phones
-							.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
-			number = phones
-					.getString(phones
-							.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-			textArr.add(name);
-			numArr.add(number);
-		}
+	public void getFavNumber(ContentResolver cr) {
+
+		// db에서 즐겨찾기 친구 가져오는 메서드 작성
+
+		textArr.add("징징이1");
+		textArr.add("징징이2");
+		textArr.add("징징이3");
+		textArr.add("징징이4");
+		textArr.add("징징이5");
+		textArr.add("징징이6");
+
+		numArr.add("0100000001");
+		numArr.add("0100000002");
+		numArr.add("0100000003");
+		numArr.add("0100000004");
+		numArr.add("0100000005");
+		numArr.add("0100000006");
 
 	}
 
