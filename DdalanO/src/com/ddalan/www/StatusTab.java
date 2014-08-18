@@ -18,7 +18,10 @@ ProgressBar progressBar;
             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.statustab, container, false);
         
-       progressBar = (ProgressBar)getActivity().findViewById(R.id.progressbar);
+       progressBar = (ProgressBar)getActivity().findViewById(R.id.progressbar1);
+       progressBar = (ProgressBar)getActivity().findViewById(R.id.progressbar2);
+       progressBar = (ProgressBar)getActivity().findViewById(R.id.progressbar3);
+       progressBar = (ProgressBar)getActivity().findViewById(R.id.progressbar4);
         
 //		getActivity().findViewById(R.id.btn1).setOnClickListener(clickListener);
 // 		getActivity().findViewById(R.id.btn2).setOnClickListener(clickListener);
