@@ -54,7 +54,7 @@ public class SendPush extends AsyncTask<String, Void, Void> {
 			
 			
 			// Post°´Ã¼ »ý¼º
-			HttpPost httpPost = new HttpPost("http://192.168.0.47:8080/push.do");
+			HttpPost httpPost = new HttpPost("http://192.168.0.79:8080/push.do");
 			
 			try {
 				UrlEncodedFormEntity entity = new UrlEncodedFormEntity(post, "UTF-8");
@@ -63,7 +63,7 @@ public class SendPush extends AsyncTask<String, Void, Void> {
 				
 				content = respone.getEntity().getContent();
 				
-				return null;
+				return content;
 			} catch (ClientProtocolException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
