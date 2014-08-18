@@ -21,7 +21,6 @@ import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.GridView;
 import android.widget.Toast;
 
-import com.ddalan.gcm.GcmRegID;
 import com.ddalan.gcm.SendPush;
 
 public class FriendsTab extends Fragment {
@@ -74,8 +73,7 @@ public class FriendsTab extends Fragment {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
-				new SendPush(getActivity()).execute(new GcmRegID()
-						.getID(getActivity()));
+				new SendPush(getActivity()).execute(numArr.get(position));
 
 				// ////////////사운드재생///////////////
 				// mPool.play(mDdok, 1, 1, 0, 0, 1);
