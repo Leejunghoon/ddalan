@@ -24,6 +24,7 @@ public class FavoritesTab extends Fragment {
 	String name;
 	String number;
 	int photo = R.drawable.woman5;
+	boolean spreadList;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -31,7 +32,12 @@ public class FavoritesTab extends Fragment {
 		View friendView = inflater.inflate(R.layout.favoritestab, container,
 				false);
 		// 주소록에서 이름만 가져와서 저장..
-		getFavNumber(getActivity().getContentResolver());
+
+		if (spreadList == false) {
+			getFavNumber(getActivity().getContentResolver());
+			spreadList = true;
+
+		}
 
 		// 친구목록 그리드뷰에 데이터 바인딩 작업
 		GridView gridView = (GridView) friendView.findViewById(R.id.grid);
@@ -59,7 +65,7 @@ public class FavoritesTab extends Fragment {
 			public boolean onItemLongClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
-				System.out.println("길게 누름, " + position + "번 선택됨!");
+				System.out.println("길게 누름, " + position + "번 선택됨!!");
 				// 투명한 액티비티(WebDialog) 액티비티를 시작한다.
 				Intent intent = new Intent(getActivity(), FriendDialog.class);
 				intent.putExtra("position", position);
