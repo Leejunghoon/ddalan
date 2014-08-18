@@ -1,8 +1,10 @@
 package com.ddalan.gcm;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
+import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -37,10 +39,10 @@ public class SendPush extends AsyncTask<String, Void, Void> {
 		}
 		
 		// 실제 전송하는 부분
-		public String executeClient(String regid) {
-
+		public InputStream executeClient(String num) {
+			InputStream content;
 			ArrayList<NameValuePair> post = new ArrayList<NameValuePair>();
-			post.add(new BasicNameValuePair("regID", regid));
+			post.add(new BasicNameValuePair("phone", num));
 			
 		
 			// 연결 HttpClient 객체 생성
@@ -58,8 +60,11 @@ public class SendPush extends AsyncTask<String, Void, Void> {
 			try {
 				UrlEncodedFormEntity entity = new UrlEncodedFormEntity(post, "UTF-8");
 				httpPost.setEntity(entity);
-				client.execute(httpPost);
-				return EntityUtils.getContentCharSet(entity);
+				HttpResponse respone = client.execute(httpPost);
+				
+				content = respone.getEntity().getContent();
+				
+				return content;
 			} catch (ClientProtocolException e) {
 				e.printStackTrace();
 			} catch (IOException e) {

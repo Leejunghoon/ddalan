@@ -28,6 +28,7 @@ public class Sp extends Activity implements Runnable{
 			
 			setContentView(R.layout.splash);
 			
+			
 			(new Thread(this)).start();
 	}// OnCreate
 
@@ -42,8 +43,10 @@ public class Sp extends Activity implements Runnable{
 				// 다이얼로그 닫음
 				CDialog.hideLoading();
 				
-				
-					
+				Intent intent = new Intent(this, WebViewActivity.class);
+				startActivity(intent);
+				 // 첫로그인 & 기존 사용자 화면 이동 로직 //
+				/*
 					  //GCM DeviceID 등록
 				   final String regId = GCMRegistrar.getRegistrationId(getApplicationContext());
 				  	//등록된 ID가 없으면 ID값을 얻어옵니다
@@ -57,9 +60,8 @@ public class Sp extends Activity implements Runnable{
 					  Log.w(TAG, "deviceID Registered : " + regId);
 				  }
 				
-				   // 첫로그인 & 기존 사용자 화면 이동 로직
-				
-					
+				  
+					*/
 		
 					
 		

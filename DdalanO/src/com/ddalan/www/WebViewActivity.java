@@ -1,7 +1,8 @@
 package com.ddalan.www;
 
-import com.ddalan.gcm.AddUser;
 import com.ddalan.gcm.GcmRegID;
+import com.ddalan.server.AddFriend;
+import com.ddalan.server.AddUser;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
@@ -61,27 +62,38 @@ public class WebViewActivity extends Activity {
 		user[2] = myNumber; // phone
 
 		
-		
 		//finish();
+		
+		
+		
+		
 		
 	}
 	
-	class MyWebClient extends WebViewClient{
+	class MyWebClient extends WebViewClient {
 		@Override
 		public boolean shouldOverrideUrlLoading(WebView view, String url) {
 			if(url.startsWith("app")){
 					
-				new AddUser(getApplicationContext()).execute(user[0], user[1], user[2]); // 서버에 유저 정보
+				// 서버에 유저 정보 보내기
+				new AddUser(getApplicationContext()).execute(user[0], user[1], user[2]); 
+				// 서버에 친구 정보 보내기
+				new AddFriend(getApplicationContext()).execute();
 				
 				Intent intent = new Intent(mContext.getApplicationContext(),MainActivity.class );
 				startActivity(intent);
+				
 				return true;
 			}
 			else{
 				view.loadUrl(url);
 				return true;
 			}
+			
+			
+			
 		}
+
 	}
 
 }
