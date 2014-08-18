@@ -65,7 +65,8 @@ public class FriendsTab extends Fragment {
 
 		// 친구목록 그리드뷰에 데이터 바인딩 작업
 		GridView gridView = (GridView) friendView.findViewById(R.id.GridView02);
-		gridView.setAdapter(new FriendAdapter(this.getActivity(), textArr, numArr));
+		gridView.setAdapter(new FriendAdapter(this.getActivity(), textArr,
+				numArr));
 		gridView.setOnItemClickListener(new OnItemClickListener() {
 
 			// 친구(Item)를 눌렀을 때(Click) 무엇을 실행할지 메소드 구현. 지금은 팝업메뉴.
@@ -79,7 +80,7 @@ public class FriendsTab extends Fragment {
 				// mPool.play(mDdok, 1, 1, 0, 0, 1);
 				// /////////////진동재생///////////////
 				// mVib.vibrate(500);
-				
+
 				Toast.makeText(getActivity(),
 						textArr.get(position) + "에게 따란을 전송합니다",
 						Toast.LENGTH_SHORT).show();
@@ -95,7 +96,7 @@ public class FriendsTab extends Fragment {
 
 				System.out.println("길게 누름, " + position + "번 선택됨.");
 				String picStr = numArr.get(position);
-				int picNo = Integer.parseInt(picStr.substring(picStr.length()-1));
+				int picNo = Integer.parseInt(picStr.substring(picStr.length() - 1));
 				// 투명한 액티비티(WebDialog) 액티비티를 시작한다.
 				Intent intent = new Intent(getActivity(), FriendDialog.class);
 				intent.putExtra("position", position);
