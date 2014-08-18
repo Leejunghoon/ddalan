@@ -58,6 +58,7 @@
                 <data android:scheme="app" />
             </intent-filter>
         </activity>
+        
 
         <receiver
             android:name="com.google.android.gcm.GCMBroadcastReceiver"
