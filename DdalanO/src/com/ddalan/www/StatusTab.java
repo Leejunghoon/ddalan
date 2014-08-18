@@ -1,7 +1,6 @@
 package com.ddalan.www;
 
 import android.app.Fragment;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +17,23 @@ public class StatusTab extends Fragment {
         View rootView = inflater.inflate(R.layout.statustab, container, false);
         
         progressBar = (ProgressBar)getActivity().findViewById(R.id.progressbar);
-  
+        
+ 		getActivity().findViewById(R.id.btn1).setOnClickListener(clickListener);
+ 		getActivity().findViewById(R.id.btn2).setOnClickListener(clickListener);
+ 		
         return rootView;
     }	
+  
+  	private View.OnClickListener clickListener = new View.OnClickListener() {
+  		
+  	public void onClick(View v) {
+  		if(v.getId()==R.id.btn1){
+            progressBar.incrementProgressBy(5);
+       } else if(v.getId()==R.id.btn2){
+            progressBar.incrementSecondaryProgressBy(5);
+       }
+  	}
+  };
 }
+
+
