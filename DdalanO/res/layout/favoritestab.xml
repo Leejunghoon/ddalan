@@ -78,32 +78,20 @@
         android:orientation="horizontal"
         android:weightSum="1" >
 
-        <View
-            android:id="@+id/view4"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="0.3"
-            android:background="@android:color/black"
-            android:contentDescription="즐겨찾기1" />
-
-        <View
-            android:id="@+id/view5"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="0.4"
-            android:background="@android:color/black"
-            android:contentDescription="즐겨찾기2" />
-
-        <View
-            android:id="@+id/view6"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="0.3"
-            android:background="@android:color/black"
-            android:contentDescription="즐겨찾기3" />
+    <GridView
+        android:paddingTop="15dp"
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnWidth="90dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:numColumns="auto_fit"
+        android:stretchMode="columnWidth"
+        android:verticalSpacing="10dp"  >
+        
+    </GridView>
+        
     </LinearLayout>
 
     <LinearLayout
@@ -113,86 +101,4 @@
         android:background="@android:color/holo_orange_light"
         android:contentDescription="세번째 여백"
         android:orientation="horizontal" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.15"
-        android:background="@android:color/holo_orange_light"
-        android:contentDescription="추천친구 목록"
-        android:orientation="horizontal"
-        android:weightSum="1" >
-
-        <View
-            android:id="@+id/view13"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="0.3"
-            android:background="@android:color/black"
-            android:contentDescription="추천친구1" />
-
-        <View
-            android:id="@+id/view14"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="0.4"
-            android:background="@android:color/black"
-            android:contentDescription="추천친구2" />
-
-        <View
-            android:id="@+id/view15"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="0.3"
-            android:background="@android:color/black"
-            android:contentDescription="추천친구3" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0.05"
-        android:background="@android:color/holo_orange_light"
-        android:contentDescription="네번째 여백"
-        android:orientation="horizontal" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.15"
-        android:background="@android:color/holo_orange_light"
-        android:contentDescription="빠른 환경설정?"
-        android:orientation="horizontal"
-        android:weightSum="1" >
-
-        <View
-            android:id="@+id/view10"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="0.2"
-            android:background="@android:color/black"
-            android:contentDescription="환경설정 1" />
-
-        <View
-            android:id="@+id/view11"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="0.3"
-            android:background="@android:color/black"
-            android:contentDescription="환경설정 2" />
-
-        <View
-            android:id="@+id/view12"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="0.5"
-            android:background="@android:color/black"
-            android:contentDescription="환경설정 3" />
-    </LinearLayout>
-
 </LinearLayout>
