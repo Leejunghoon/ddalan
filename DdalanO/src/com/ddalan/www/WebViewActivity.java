@@ -1,9 +1,5 @@
 package com.ddalan.www;
 
-import com.ddalan.gcm.GcmRegID;
-import com.ddalan.server.AddFriend;
-import com.ddalan.server.AddUser;
-
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.app.Activity;
@@ -14,6 +10,10 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import com.ddalan.gcm.AddFriend;
+import com.ddalan.gcm.AddUser;
+import com.ddalan.gcm.GcmRegID;
 
 public class WebViewActivity extends Activity {
 
@@ -55,7 +55,7 @@ public class WebViewActivity extends Activity {
 		TelephonyManager systemService = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 		String myNumber = systemService.getLine1Number();
 
-		Log.w("test", "phone!!!!!!" + myNumber + "address!!!!!" + addresses[0]);
+		Log.w("test", "phone!!!!!!" + myNumber + "address!!!!" + addresses[0]);
 	
 	    user[0] = new GcmRegID().getID(getApplicationContext());
 		user[1] = addresses[0]; // email
