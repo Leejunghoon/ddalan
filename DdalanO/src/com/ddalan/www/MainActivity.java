@@ -20,7 +20,7 @@ public class MainActivity extends FragmentActivity {
 	ActionBar.Tab Tab1, Tab2, Tab3, Tab4;
 	Fragment fragmentTab1 = new FavoritesTab();
 	Fragment fragmentTab2 = new FriendsTab();
-	Fragment fragmentTab3 = new StatusTab();
+	Fragment fragmentTab3 = new HistoryTab();
 	Fragment fragmentTab4 = new SettingsTab();
 
 	@Override
@@ -44,7 +44,7 @@ public class MainActivity extends FragmentActivity {
 		// 탭 아이콘과 타이틀을 설정
 		Tab1 = actionBar.newTab().setIcon(R.drawable.fav);
 		Tab2 = actionBar.newTab().setIcon(R.drawable.user);
-		Tab3 = actionBar.newTab().setIcon(R.drawable.stats);
+		Tab3 = actionBar.newTab().setIcon(R.drawable.history);
 		Tab4 = actionBar.newTab().setIcon(R.drawable.set);
 
 		
