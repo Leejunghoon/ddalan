@@ -2,7 +2,82 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
-    
+    android:orientation="vertical"
+    android:weightSum="1" >
 
+    <TextView
+        android:id="@+id/toptext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
+        android:paddingTop="7dp"
+        android:text="관심도"
+        android:textSize="18sp" />
+    
+    	<ProgressBar 
+            android:layout_height="wrap_content" 
+        	android:layout_width="match_parent" 
+   	        android:id="@+id/progressbar1" 
+       	    android:secondaryProgress="50" 
+     	    android:progress="100" 
+    	    android:max="100" 
+   	        style="?android:attr/progressBarStyleHorizontal"/>
+
+		<ProgressBar 
+		    android:layout_height="wrap_content" 
+		    android:layout_width="match_parent" 
+		    android:id="@+id/progressbar2" 
+		    android:secondaryProgress="50" 
+		    android:progress="80" 
+		    android:max="100" 
+		    style="?android:attr/progressBarStyleHorizontal"/>
+
+		<ProgressBar android:layout_height="wrap_content" 
+		    android:layout_width="match_parent" 
+		    android:id="@+id/progressbar3" 
+		    android:secondaryProgress="50" 
+		    android:progress="60" 
+		    android:max="100" 
+		    style="?android:attr/progressBarStyleHorizontal"/>
+
+		<ProgressBar 
+    		android:layout_height="wrap_content" 
+    		android:layout_width="match_parent" 
+    		android:id="@+id/progressbar4" 
+    		android:secondaryProgress="50" 
+    		android:progress="40" 
+    		android:max="100" 
+    		style="?android:attr/progressBarStyleHorizontal"/>
+
+
+
+    <TextView
+        android:id="@+id/favoriteTitleBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
+        android:paddingTop="7dp"
+        android:text="받은따란"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:contentDescription="즐겨찾기한 친구 목록"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="5dp" >
+        
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" /> 
+            
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="메시지 없음" />
+                                 
+    </LinearLayout>
 </LinearLayout>
