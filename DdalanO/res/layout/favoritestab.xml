@@ -17,47 +17,38 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.5"
-        android:contentDescription="랭커 1,2,3위 표시하는 레이아웃"
+        android:layout_weight="0.15"
         android:orientation="horizontal"
-        android:weightSum="1" >
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp" >
 
-        <View
+        <TextView
             android:id="@+id/view1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:layout_weight="0.6"
-            android:background="@android:color/black"
-            android:contentDescription="랭커 1위" />
+            android:layout_weight="0.3"
+            android:background="@android:color/darker_gray"
+            android:text="〔"
+            android:textSize="50sp" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/view2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:layout_weight="0.4"
-            android:contentDescription="랭커 2,3위 묶음"
-            android:orientation="vertical"
-            android:weightSum="1" >
+            android:text="♥"
+            android:textSize="50sp" />
 
-            <View
-                android:id="@+id/view2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:layout_weight="0.5"
-                android:background="@android:color/black"
-                android:contentDescription="랭커 2위" />
-
-            <View
-                android:id="@+id/view3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:layout_weight="0.5"
-                android:background="@android:color/black"
-                android:contentDescription="랭커 3위"
-                android:paddingTop="10dp" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="0.3"
+            android:text="〕"
+            android:textSize="50sp" />
     </LinearLayout>
 
     <TextView
@@ -72,14 +63,43 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="0.6"
+        android:layout_weight="0.57"
         android:contentDescription="즐겨찾기한 친구 목록"
-        android:orientation="horizontal"
-        android:paddingBottom="10dp"
+        android:orientation="vertical"
         android:paddingTop="5dp" >
 
         <GridView
             android:id="@+id/grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnWidth="90dp"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:numColumns="auto_fit"
+            android:paddingTop="5dp"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp" >
+        </GridView>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/contactRarely"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="7dp"
+        android:paddingTop="7dp"
+        android:text="연락뜸한친구d"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.25"
+        android:contentDescription="즐겨찾기한 친구 목록"
+        android:orientation="vertical" >
+
+        <GridView
+            android:id="@+id/grid2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:columnWidth="90dp"
