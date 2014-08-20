@@ -13,9 +13,6 @@ import android.widget.TextView;
 
 public class FriendAdapter extends BaseAdapter {
 	GridView gridView;
-	static int pic = R.drawable.man;
-	static int dgirl = R.drawable.woman;
-	static int defaultboy = R.drawable.man;
 
 	// 텍스트 배열 선언
 	ArrayList<String> textArr = new ArrayList<String>();

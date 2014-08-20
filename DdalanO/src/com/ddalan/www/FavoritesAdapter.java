@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 public class FavoritesAdapter extends BaseAdapter {
 
-	GridView gridView;
 	ArrayList<String> favNameArr = new ArrayList<String>();
 	ArrayList<String> favNumArr = new ArrayList<String>();
 
@@ -61,58 +60,61 @@ public class FavoritesAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		ImageView imageView;
-		TextView textView;
+		ImageView favFriendPic;
+		TextView favFriendName;
+		
+		ImageView rareFriendPic;
+		ImageView rareFriendName;
 
 		if (convertView == null) {
 			convertView = inflater
 					.inflate(R.layout.favoriteview, parent, false);
 		}
 
-		imageView = (ImageView) convertView.findViewById(R.id.favface);
-		textView = (TextView) convertView.findViewById(R.id.favname);
+		favFriendPic = (ImageView) convertView.findViewById(R.id.favface);
+		favFriendName = (TextView) convertView.findViewById(R.id.favname);
 
 		switch (getPhoneLastNumber(position)) {
 
 		case 0:
-			imageView.setImageResource(R.drawable.man5);
+			favFriendPic.setImageResource(R.drawable.man5);
 			break;
 
 		case 1:
-			imageView.setImageResource(R.drawable.man6);
+			favFriendPic.setImageResource(R.drawable.man6);
 			break;
 
 		case 2:
-			imageView.setImageResource(R.drawable.man7);
+			favFriendPic.setImageResource(R.drawable.man7);
 			break;
 
 		case 3:
-			imageView.setImageResource(R.drawable.man8);
+			favFriendPic.setImageResource(R.drawable.man8);
 			break;
 
 		case 4:
-			imageView.setImageResource(R.drawable.man9);
+			favFriendPic.setImageResource(R.drawable.man9);
 			break;
 
 		case 5:
-			imageView.setImageResource(R.drawable.woman5);
+			favFriendPic.setImageResource(R.drawable.woman5);
 			break;
 
 		case 6:
-			imageView.setImageResource(R.drawable.woman6);
+			favFriendPic.setImageResource(R.drawable.woman6);
 			break;
 
 		case 7:
-			imageView.setImageResource(R.drawable.woman7);
+			favFriendPic.setImageResource(R.drawable.woman7);
 			break;
 
 		default:
-			imageView.setImageResource(R.drawable.woman8);
+			favFriendPic.setImageResource(R.drawable.woman8);
 			break;
 
 		}
 
-		textView.setText(favNameArr.get(position));
+		favFriendName.setText(favNameArr.get(position));
 
 		// imageView.setImageResource(picture[position]);
 		return convertView;

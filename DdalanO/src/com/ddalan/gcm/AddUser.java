@@ -55,7 +55,7 @@ public class AddUser extends AsyncTask<String, Void, Void> {
 			
 			
 			// Post°´Ã¼ »ý¼º
-			HttpPost httpPost = new HttpPost("http://192.168.0.79:8080/addUser.do");
+			HttpPost httpPost = new HttpPost("http://192.168.0.47:8080/addUser.do");
 			
 			try {
 				UrlEncodedFormEntity entity = new UrlEncodedFormEntity(post, "UTF-8");

@@ -52,7 +52,6 @@ public class GCMIntentService extends GCMBaseIntentService {
 		Toast.makeText(this, "RegID 등록 완료", Toast.LENGTH_LONG).show();
 	}
 
-	@SuppressWarnings("deprecation")
 	private void showMessage(Context context, Intent intent) {
 		String title = intent.getStringExtra("title");
 		String msg = intent.getStringExtra("msg");
@@ -68,22 +67,21 @@ public class GCMIntentService extends GCMBaseIntentService {
 				getApplicationContext(), 0, intent,
 				Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
 		// 두번째
-	//	PendingIntent pendingIntent2 = PendingIntent.getActivity(
-	//			getApplicationContext(), 0, intent,
-	//			Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
+		// PendingIntent pendingIntent2 = PendingIntent.getActivity(
+		// getApplicationContext(), 0, intent,
+		// Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
 		// 세번째
 		// PendingIntent pendingIntent3 = PendingIntent.getActivity(context, 0,
 		// new Intent(), 0);
 
 		NotificationCompat.Builder builder = new NotificationCompat.Builder(
 				GCMIntentService.this);
-		builder.setSmallIcon(R.drawable.woman7);
+		builder.setSmallIcon(R.drawable.ddalan);
 		builder.setContentTitle("따란");
 		builder.setContentText(ticker + "님으로부터 메세지가 도착했어요");
 		builder.setVibrate(new long[] { 50, 50, 50, 50 });
 		builder.setAutoCancel(true);
-		builder.setSound(Uri.parse("android.resource://"
-				+ context.getPackageName() + "/" + R.raw.ddaran));
+		builder.setSound(getSound());
 		builder.setContentIntent(pendingIntent);
 
 		manager.notify(0, builder.build());
@@ -95,6 +93,16 @@ public class GCMIntentService extends GCMBaseIntentService {
 		// notification.when = System.currentTimeMillis();
 		// notification.flags = Notification.FLAG_AUTO_CANCEL;
 		// notification.setLatestEventInfo(context, title, msg, pendingIntent);
+
+	}
+
+	public Uri getSound() {
+
+		// 설정으로부터 값을 받아서
+		Uri ddalanUri = Uri.parse("android.resource://" + getPackageName()
+				+ "/" + R.raw.ddaran);
+
+		return ddalanUri;
 
 	}
 
