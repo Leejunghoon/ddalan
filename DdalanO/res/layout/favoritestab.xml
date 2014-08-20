@@ -24,31 +24,16 @@
 
         <TextView
             android:id="@+id/view1"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:layout_weight="0.3"
             android:background="@android:color/darker_gray"
-            android:text="〔"
-            android:textSize="50sp" />
+            android:text="| 20 ↑ | ↓ 50 |"
+            android:textColor="@android:color/white"
+            android:textSize="30sp"
+            android:textAlignment="center" />
 
-        <TextView
-            android:id="@+id/view2"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="0.4"
-            android:text="♥"
-            android:textSize="50sp" />
-
-        <TextView
-            android:id="@+id/view3"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_weight="0.3"
-            android:text="〕"
-            android:textSize="50sp" />
     </LinearLayout>
 
     <TextView
@@ -88,7 +73,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="7dp"
         android:paddingTop="7dp"
-        android:text="연락뜸한친구d"
+        android:text="연락뜸한친구"
         android:textSize="18sp" />
 
     <LinearLayout
