@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -62,9 +61,6 @@ public class FavoritesAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ImageView favFriendPic;
 		TextView favFriendName;
-		
-		ImageView rareFriendPic;
-		ImageView rareFriendName;
 
 		if (convertView == null) {
 			convertView = inflater
