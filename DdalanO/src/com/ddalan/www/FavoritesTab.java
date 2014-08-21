@@ -33,7 +33,6 @@ public class FavoritesTab extends Fragment {
 			getFavNumber(getActivity().getContentResolver());
 			getRareNumber();
 			spreadList = true;
-
 		}
 
 		// 친구목록 그리드뷰에 데이터 바인딩 작업
@@ -61,14 +60,21 @@ public class FavoritesTab extends Fragment {
 			public boolean onItemLongClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
+				String picStr = rareNumArr.get(position);
+				int picNo = Integer.parseInt(picStr.substring(picStr.length() - 1));
+				
 				System.out.println("길게 누름, " + position + "번 선택됨!!");
 				// 투명한 액티비티(WebDialog) 액티비티를 시작한다.
 				Intent intent = new Intent(getActivity(), FriendDialog.class);
 				intent.putExtra("position", position);
-				intent.putExtra("name", favNameArr.get(position));
-				intent.putExtra("number", favNumArr.get(position));
+				intent.putExtra("name", rareNameArr.get(position));
+				intent.putExtra("number", rareNumArr.get(position));
+				intent.putExtra("dialogpic", picNo);
 				startActivity(intent);
 				return false;
+				
+				
+
 			}
 
 		});
@@ -98,12 +104,16 @@ public class FavoritesTab extends Fragment {
 			public boolean onItemLongClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
+				String picStr = favNumArr.get(position);
+				int picNo = Integer.parseInt(picStr.substring(picStr.length() - 1));
+				
 				System.out.println("길게 누름, " + position + "번 선택됨!!");
 				// 투명한 액티비티(WebDialog) 액티비티를 시작한다.
 				Intent intent = new Intent(getActivity(), FriendDialog.class);
 				intent.putExtra("position", position);
 				intent.putExtra("name", favNameArr.get(position));
 				intent.putExtra("number", favNumArr.get(position));
+				intent.putExtra("dialogpic", picNo);
 				startActivity(intent);
 				return false;
 			}
