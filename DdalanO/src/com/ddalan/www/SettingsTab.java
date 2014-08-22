@@ -13,13 +13,14 @@ public class SettingsTab extends PreferenceFragment {
 	// SharedPreferences.Editor editor;
 	public static final int GET_PICTURE_URI = 0;
 	Uri uri;
+	Preference setProfile;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		addPreferencesFromResource(R.layout.settingstab);
 
-		Preference setProfile = (Preference) findPreference("picphoto");
+		setProfile = (Preference) findPreference("picphoto");
 		setProfile
 				.setOnPreferenceClickListener(new OnPreferenceClickListener() {
 
@@ -40,7 +41,7 @@ public class SettingsTab extends PreferenceFragment {
 
 			@Override
 			public boolean onPreferenceClick(Preference preference) {
-				Toast.makeText(getActivity(), "친구 목록을 동기화합니다..",
+				Toast.makeText(getActivity(), "친구 목록을 동기화합니다.",
 						Toast.LENGTH_SHORT).show();
 				return false;
 			}
@@ -61,13 +62,11 @@ public class SettingsTab extends PreferenceFragment {
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
-		
+		System.out.println("onActivityResult");
 		if(requestCode==GET_PICTURE_URI){
-			if(requestCode==getActivity().RESULT_OK){
-				Uri uri=data.getData();
-				this.uri=uri;
-			}
-		}
+			System.out.println("if 1");
+			setProfile.setIcon(R.drawable.man);
 	}
 
+}
 }

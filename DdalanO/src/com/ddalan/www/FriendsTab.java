@@ -4,22 +4,22 @@ import java.util.ArrayList;
 
 import android.app.Fragment;
 import android.content.ContentResolver;
-import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
-import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.provider.ContactsContract;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.ddalan.gcm.SendPush;
@@ -53,14 +53,6 @@ public class FriendsTab extends Fragment {
 			spreadList = true;
 
 		}
-
-		// ////////////////////사운드//////////////////////////
-		mPool = new SoundPool(1, AudioManager.STREAM_MUSIC, 0);
-		mDdok = mPool.load(getActivity(), R.raw.ddaran, 1);
-
-		// /////////////////////진동//////////////////////////
-		mVib = (Vibrator) getActivity().getSystemService(
-				Context.VIBRATOR_SERVICE);
 
 		// 친구목록 서버에 저장
 
@@ -130,4 +122,41 @@ public class FriendsTab extends Fragment {
 
 	}
 
+	@Override
+	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+		// TODO Auto-generated method stub
+		super.onCreateOptionsMenu(menu, inflater);
+		
+	    MenuInflater mInflater = getActivity().getMenuInflater();
+	    mInflater.inflate(R.menu.pop, menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+        case R.id.action_search:
+        	Toast.makeText(getActivity(), "action_search Selected", Toast.LENGTH_SHORT).show();
+            openSearch();
+            return true;
+        case R.id.action_settings:
+        	Toast.makeText(getActivity(), "action_settings Selected ", Toast.LENGTH_SHORT).show();
+            openSettings();
+            return true;
+        default:
+            return super.onOptionsItemSelected(item);
+    }
+	}
+
+	private void openSettings() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void openSearch() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	
 }// class

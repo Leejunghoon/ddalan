@@ -44,6 +44,6 @@
             android:showDefault="true"
             android:showSilent="true"
             android:title="@string/ddalan" />
-    </PreferenceCategory>
-
+    </PreferenceCategory>    
+    
 </PreferenceScreen>

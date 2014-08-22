@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:title="DDAN" android:id="@+id/one"/>
-    <item android:title="DDALAN" android:id="@+id/two"/>
-    <item android:title="CALL" android:id="@+id/three"/>
-    <item android:title="FAV ADD" android:id="@+id/four"/>
-    
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:yourapp="http://schemas.android.com/apk/res-auto" >
+
+    <!-- Search, should appear as action button -->
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_action_search"
+        android:title="action_search"
+        yourapp:showAsAction="ifRoom"/>
+
 </menu>

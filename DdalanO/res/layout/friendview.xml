@@ -21,7 +21,6 @@
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:src="@drawable/ddalan"
-            android:visibility="invisible"
             android:contentDescription="보냈는지 안보냈는지 왼쪽위에 아이콘 띄움" />
     </RelativeLayout>
 
