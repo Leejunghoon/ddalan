@@ -11,5 +11,6 @@ public class ProfilePref extends DialogPreference
     {
         super(oContext, attrs);
         
-    }
+    }    
+    
 }

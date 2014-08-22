@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content" >
 
     <!-- 프로필 관리 -->
 
     <PreferenceCategory android:title="개인 정보" >
-        <com.ddalan.www.ProfilePref
-            android:dialogIcon="@drawable/push"
-            android:dialogMessage="이 부분에 사진을 넣고싶다"
-            android:key="setAvatar"
-            android:negativeButtonText="취소"
-            android:positiveButtonText="확인"
+
+        <Preference
+            android:id="@+id/pickprofile"
+            android:key="picphoto"
             android:summary="친구들에게 보여줄 프로필사진을 바꿔보세요."
             android:title="프로필 설정" />
+
+        <com.ddalan.www.ProfilePref
+            android:id="@+id/userinfo"
+            android:dialogIcon="@drawable/push"
+            android:dialogMessage="이메일: clararish@gmail.com      "
+            android:key="userinfo"
+            android:positiveButtonText="확인"
+            android:title="로그인 정보" />
     </PreferenceCategory>
 
     <PreferenceCategory android:title="친구 관리" >
