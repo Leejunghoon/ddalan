@@ -29,7 +29,7 @@
             android:max="100"
             android:progress="100"
             android:progressDrawable="@drawable/progress_green"
-            android:secondaryProgress="50" />
+            android:secondaryProgress="80" />
 
         <ProgressBar
             android:id="@+id/progressbar2"
@@ -40,7 +40,7 @@
             android:max="100"
             android:progress="80"
             android:progressDrawable="@drawable/progress_green"
-            android:secondaryProgress="50" />
+            android:secondaryProgress="70" />
 
         <ProgressBar
             android:id="@+id/progressbar3"
@@ -51,7 +51,7 @@
             android:max="100"
             android:progress="60"
             android:progressDrawable="@drawable/progress_green"
-            android:secondaryProgress="50" />
+            android:secondaryProgress="45" />
 
         <ProgressBar
             android:id="@+id/progressbar4"
@@ -62,7 +62,7 @@
             android:max="100"
             android:progress="40"
             android:progressDrawable="@drawable/progress_green"
-            android:secondaryProgress="50" />
+            android:secondaryProgress="20" />
     </LinearLayout>
 
     <LinearLayout
