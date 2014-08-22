@@ -18,57 +18,248 @@
             android:paddingLeft="7dp"
             android:paddingTop="7dp"
             android:text="관심도"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
-        <ProgressBar
-            android:id="@+id/progressbar1"
-            style="?android:attr/progressBarStyleHorizontal"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:max="100"
-            android:progress="100"
-            android:progressDrawable="@drawable/progress_green"
-            android:secondaryProgress="80" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
 
-        <ProgressBar
-            android:id="@+id/progressbar2"
-            style="?android:attr/progressBarStyleHorizontal"
+            <ProgressBar
+                android:id="@+id/progressbar1"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="0.45"
+                android:max="100"
+                android:progress="100"
+                android:progressDrawable="@drawable/progress_grey"
+                android:secondaryProgress="20" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="18dp"
+                android:paddingLeft="5dp"
+                android:src="@drawable/bronz" />
+
+            <TextView
+                android:id="@+id/namesp1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="김따란"
+                android:textSize="17sp" />
+
+            <ProgressBar
+                android:id="@+id/progressbar11"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="0.45"
+                android:max="100"
+                android:progress="100"
+                android:progressDrawable="@drawable/progress_green"
+                android:secondaryProgress="80" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:max="100"
-            android:progress="80"
-            android:progressDrawable="@drawable/progress_green"
-            android:secondaryProgress="70" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
 
-        <ProgressBar
-            android:id="@+id/progressbar3"
-            style="?android:attr/progressBarStyleHorizontal"
+            <ProgressBar
+                android:id="@+id/progressbar2"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="0.45"
+                android:max="100"
+                android:progress="100"
+                android:progressDrawable="@drawable/progress_grey"
+                android:secondaryProgress="40" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="18dp"
+                android:paddingLeft="5dp"
+                android:src="@drawable/bronz" />
+
+            <TextView
+                android:id="@+id/namesp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="김토란"
+                android:textSize="17sp" />
+
+            <ProgressBar
+                android:id="@+id/progressbar22"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="0.45"
+                android:max="100"
+                android:progress="100"
+                android:progressDrawable="@drawable/progress_green"
+                android:secondaryProgress="40" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:max="100"
-            android:progress="60"
-            android:progressDrawable="@drawable/progress_green"
-            android:secondaryProgress="45" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
 
-        <ProgressBar
-            android:id="@+id/progressbar4"
-            style="?android:attr/progressBarStyleHorizontal"
+            <ProgressBar
+                android:id="@+id/progressbar3"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="0.45"
+                android:max="100"
+                android:progress="100"
+                android:progressDrawable="@drawable/progress_grey"
+                android:secondaryProgress="60" />
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="20dp"
+                android:paddingLeft="5dp"
+                android:src="@drawable/bronz" />
+
+            <TextView
+                android:id="@+id/namesp3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="김계란"
+                android:textSize="17sp" />
+
+            <ProgressBar
+                android:id="@+id/progressbar33"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="0.45"
+                android:max="100"
+                android:progress="100"
+                android:progressDrawable="@drawable/progress_green"
+                android:secondaryProgress="30" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:max="100"
-            android:progress="40"
-            android:progressDrawable="@drawable/progress_green"
-            android:secondaryProgress="20" />
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <ProgressBar
+                android:id="@+id/progressbar4"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="0.45"
+                android:max="100"
+                android:progress="100"
+                android:progressDrawable="@drawable/progress_grey"
+                android:secondaryProgress="70" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="18dp"
+                android:paddingLeft="5dp"
+                android:src="@drawable/bronz" />
+
+            <TextView
+                android:id="@+id/namesp4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="김파란"
+                android:textSize="17sp" />
+
+            <ProgressBar
+                android:id="@+id/progressbar44"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="0.45"
+                android:max="100"
+                android:progress="100"
+                android:progressDrawable="@drawable/progress_green"
+                android:secondaryProgress="25" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <ProgressBar
+                android:id="@+id/progressbar5"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="0.45"
+                android:max="100"
+                android:progress="100"
+                android:progressDrawable="@drawable/progress_grey"
+                android:secondaryProgress="80" />
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:paddingLeft="5dp"
+                android:src="@drawable/bronz" />
+
+            <TextView
+                android:id="@+id/namesp5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="김노란"
+                android:textSize="17sp" />
+
+            <ProgressBar
+                android:id="@+id/progressbar55"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_weight="0.45"
+                android:max="100"
+                android:progress="100"
+                android:progressDrawable="@drawable/progress_green"
+                android:secondaryProgress="10" />
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.6"
+        android:layout_weight="0.5"
         android:orientation="vertical"
         android:paddingBottom="10dp"
         android:paddingTop="5dp" >
@@ -80,7 +271,7 @@
             android:paddingLeft="7dp"
             android:paddingTop="7dp"
             android:text="히스토리"
-            android:textSize="18sp" />
+            android:textSize="20sp" />
 
         <ListView
             android:id="@+id/listhistory"

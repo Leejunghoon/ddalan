@@ -1,6 +1,7 @@
 package com.ddalan.www;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import android.app.Fragment;
 import android.content.Context;
@@ -50,32 +51,30 @@ public class HistoryTab extends Fragment {
 
 		nameArr.add("Â¡Â¡ÀÌ1");
 		nameArr.add("Â¡Â¡ÀÌ2");
-		nameArr.add("Â¡Â¡ÀÌ3");
+		nameArr.add("Â¡Â¡ÀÌ2");
 		nameArr.add("Â¡Â¡ÀÌ4");
 		nameArr.add("Â¡Â¡ÀÌ5");
-		nameArr.add("Â¡Â¡ÀÌ6");
+		nameArr.add("Â¡Â¡ÀÌ5");
+		nameArr.add("Â¡Â¡ÀÌ3");
+		nameArr.add("Â¡Â¡ÀÌ2");
+		nameArr.add("Â¡Â¡ÀÌ1");
+		nameArr.add("Â¡Â¡ÀÌ1");
 		nameArr.add("Â¡Â¡ÀÌ1");
 		nameArr.add("Â¡Â¡ÀÌ2");
-		nameArr.add("Â¡Â¡ÀÌ3");
-		nameArr.add("Â¡Â¡ÀÌ4");
-		nameArr.add("Â¡Â¡ÀÌ5");
-		nameArr.add("Â¡Â¡ÀÌ6");
 
-
+		numArr.add("¿ÀÈÄ 3:46");
 		numArr.add("¿ÀÈÄ 3:47");
-		numArr.add("¿ÀÈÄ 2:14");
-		numArr.add("¿ÀÀü 10:32");
+		numArr.add("¿ÀÈÄ 2:11");
+		numArr.add("¿ÀÈÄ 1:14");
 		numArr.add("¿ÀÀü 8:23");
+		numArr.add("¿ÀÀü 10:23");
+		numArr.add("¿ÀÀü 10:32");
+		numArr.add("¿ÀÀü 10:32");
+		numArr.add("2014/8/20");
 		numArr.add("2014/8/20");
 		numArr.add("2014/8/19");
-		numArr.add("¿ÀÈÄ 3:47");
-		numArr.add("¿ÀÈÄ 2:14");
-		numArr.add("¿ÀÀü 10:32");
-		numArr.add("¿ÀÀü 8:23");
-		numArr.add("2014/8/20");
 		numArr.add("2014/8/19");
 
-		
 	}
 
 	/*
@@ -127,8 +126,23 @@ public class HistoryTab extends Fragment {
 				convertView = inflater.inflate(layout, parent, false);
 			}
 
+			Random ran = new Random();
+			int x = ran.nextInt(10);
+
 			ImageView img = (ImageView) convertView.findViewById(R.id.hisPic);
-			img.setImageResource(R.drawable.woman);
+
+			switch (x%2) {
+			case 0:
+				img.setImageResource(R.drawable.arrowup);
+				break;
+			case 1:
+				img.setImageResource(R.drawable.arrowdown);
+				break;
+			default:
+				img.setImageResource(R.drawable.arrowup);
+
+			}
+
 			TextView txt = (TextView) convertView.findViewById(R.id.hisName);
 			txt.setText(nameArr.get(position));
 			TextView time = (TextView) convertView.findViewById(R.id.hisTime);

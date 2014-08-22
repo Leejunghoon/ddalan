@@ -7,8 +7,8 @@
     <ImageView
         android:id="@+id/hisPic"
         android:padding="5dp"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:contentDescription="히스토리에 들어갈 사진" />
 
     <TextView
@@ -17,7 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
     
         <TextView
         android:padding="5dp"

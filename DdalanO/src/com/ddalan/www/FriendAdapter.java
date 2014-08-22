@@ -61,25 +61,17 @@ public class FriendAdapter extends BaseAdapter {
 		ImageView imageView;
 		TextView textView;
 		ImageView checkView;
-		ImageView sended;
-		ImageView received;
-		
 
 		if (convertView == null) {
 			// View = friendtab.xml ViewGroup = friendtab.xml(RelativeLayout)
 			convertView = inflater.inflate(R.layout.friendview, parent, false);
-
 		}
 
 		imageView = (ImageView) convertView.findViewById(R.id.frface);
 		textView = (TextView) convertView.findViewById(R.id.frname);
 		checkView = (ImageView) convertView.findViewById(R.id.checkImg);
-		checkView.setImageResource(R.drawable.listfav);
-		sended=(ImageView)convertView.findViewById(R.id.sended);
-		sended.setImageResource(R.drawable.arrowup);
-		received=(ImageView)convertView.findViewById(R.id.received);
-		received.setImageResource(R.drawable.arrowdown);
-		
+		checkView.setImageResource(R.drawable.ddalan);
+
 		switch (getPhoneLastNumber(position)) {
 
 		case 0:

@@ -19,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.ddalan.gcm.SendPush;
@@ -73,7 +74,6 @@ public class FriendsTab extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
-
 				new SendPush(getActivity()).execute(numArr.get(position));
 
 				// ////////////사운드재생///////////////
