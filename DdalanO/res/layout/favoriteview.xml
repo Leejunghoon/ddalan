@@ -10,7 +10,8 @@
         android:id="@+id/favface"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:contentDescription="즐겨찾기 친구 이미지"/>
 
     <TextView
         android:id="@+id/favname"

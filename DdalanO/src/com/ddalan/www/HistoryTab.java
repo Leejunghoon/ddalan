@@ -54,6 +54,13 @@ public class HistoryTab extends Fragment {
 		nameArr.add("Â¡Â¡ÀÌ4");
 		nameArr.add("Â¡Â¡ÀÌ5");
 		nameArr.add("Â¡Â¡ÀÌ6");
+		nameArr.add("Â¡Â¡ÀÌ1");
+		nameArr.add("Â¡Â¡ÀÌ2");
+		nameArr.add("Â¡Â¡ÀÌ3");
+		nameArr.add("Â¡Â¡ÀÌ4");
+		nameArr.add("Â¡Â¡ÀÌ5");
+		nameArr.add("Â¡Â¡ÀÌ6");
+
 
 		numArr.add("¿ÀÈÄ 3:47");
 		numArr.add("¿ÀÈÄ 2:14");
@@ -61,7 +68,14 @@ public class HistoryTab extends Fragment {
 		numArr.add("¿ÀÀü 8:23");
 		numArr.add("2014/8/20");
 		numArr.add("2014/8/19");
+		numArr.add("¿ÀÈÄ 3:47");
+		numArr.add("¿ÀÈÄ 2:14");
+		numArr.add("¿ÀÀü 10:32");
+		numArr.add("¿ÀÀü 8:23");
+		numArr.add("2014/8/20");
+		numArr.add("2014/8/19");
 
+		
 	}
 
 	/*

@@ -60,6 +60,10 @@ public class FriendAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ImageView imageView;
 		TextView textView;
+		ImageView checkView;
+		ImageView sended;
+		ImageView received;
+		
 
 		if (convertView == null) {
 			// View = friendtab.xml ViewGroup = friendtab.xml(RelativeLayout)
@@ -69,7 +73,13 @@ public class FriendAdapter extends BaseAdapter {
 
 		imageView = (ImageView) convertView.findViewById(R.id.frface);
 		textView = (TextView) convertView.findViewById(R.id.frname);
-
+		checkView = (ImageView) convertView.findViewById(R.id.checkImg);
+		checkView.setImageResource(R.drawable.listfav);
+		sended=(ImageView)convertView.findViewById(R.id.sended);
+		sended.setImageResource(R.drawable.arrowup);
+		received=(ImageView)convertView.findViewById(R.id.received);
+		received.setImageResource(R.drawable.arrowdown);
+		
 		switch (getPhoneLastNumber(position)) {
 
 		case 0:
