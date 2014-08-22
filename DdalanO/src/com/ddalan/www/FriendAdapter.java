@@ -38,7 +38,7 @@ public class FriendAdapter extends BaseAdapter {
 
 	@Override
 	public Object getItem(int position) {
-		return position;
+		return textArr.get(position);
 	}
 
 	@Override

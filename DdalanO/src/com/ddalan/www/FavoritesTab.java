@@ -2,6 +2,7 @@ package com.ddalan.www;
 
 import java.util.ArrayList;
 
+import android.app.ActionBar;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -18,7 +19,7 @@ import android.widget.Toast;
 public class FavoritesTab extends Fragment {
 	ArrayList<String> favNameArr = new ArrayList<String>();
 	ArrayList<String> favNumArr = new ArrayList<String>();
-	
+
 	ArrayList<String> rareNameArr = new ArrayList<String>();
 	ArrayList<String> rareNumArr = new ArrayList<String>();
 	boolean spreadList;
@@ -28,6 +29,7 @@ public class FavoritesTab extends Fragment {
 			Bundle savedInstanceState) {
 		View friendView = inflater.inflate(R.layout.favoritestab, container,
 				false);
+
 		// 주소록에서 이름만 가져와서 저장..
 		if (spreadList == false) {
 			getFavNumber(getActivity().getContentResolver());
@@ -37,7 +39,8 @@ public class FavoritesTab extends Fragment {
 
 		// 친구목록 그리드뷰에 데이터 바인딩 작업
 		GridView rareView = (GridView) friendView.findViewById(R.id.grid2);
-		rareView.setAdapter(new FavoritesAdapter(this.getActivity(), rareNameArr, rareNumArr));
+		rareView.setAdapter(new FavoritesAdapter(this.getActivity(),
+				rareNameArr, rareNumArr));
 		rareView.setOnItemClickListener(new OnItemClickListener() {
 
 			// 친구(Item)를 눌렀을 때(Click) 무엇을 실행할지 메소드 구현. 지금은 토스트.
@@ -62,7 +65,7 @@ public class FavoritesTab extends Fragment {
 
 				String picStr = rareNumArr.get(position);
 				int picNo = Integer.parseInt(picStr.substring(picStr.length() - 1));
-				
+
 				System.out.println("길게 누름, " + position + "번 선택됨!!");
 				// 투명한 액티비티(WebDialog) 액티비티를 시작한다.
 				Intent intent = new Intent(getActivity(), FriendDialog.class);
@@ -72,13 +75,11 @@ public class FavoritesTab extends Fragment {
 				intent.putExtra("dialogpic", picNo);
 				startActivity(intent);
 				return false;
-				
-				
 
 			}
 
 		});
-		
+
 		GridView favView = (GridView) friendView.findViewById(R.id.grid);
 		favView.setAdapter(new FavoritesAdapter(this.getActivity(), favNameArr,
 				favNumArr));
@@ -106,7 +107,7 @@ public class FavoritesTab extends Fragment {
 
 				String picStr = favNumArr.get(position);
 				int picNo = Integer.parseInt(picStr.substring(picStr.length() - 1));
-				
+
 				System.out.println("길게 누름, " + position + "번 선택됨!!");
 				// 투명한 액티비티(WebDialog) 액티비티를 시작한다.
 				Intent intent = new Intent(getActivity(), FriendDialog.class);
@@ -141,16 +142,17 @@ public class FavoritesTab extends Fragment {
 		favNumArr.add("0100000006");
 
 	}
-	
-	public void getRareNumber(){
-		
+
+	public void getRareNumber() {
+
 		rareNameArr.add("연락좀해1");
 		rareNameArr.add("연락좀해2");
 		rareNameArr.add("연락좀해3");
-		
+
 		rareNumArr.add("82821");
 		rareNumArr.add("82822");
 		rareNumArr.add("82823");
 	}
+
 
 }

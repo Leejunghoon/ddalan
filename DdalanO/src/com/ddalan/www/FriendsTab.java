@@ -6,9 +6,7 @@ import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.database.Cursor;
-import android.media.SoundPool;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -19,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -30,16 +29,10 @@ public class FriendsTab extends Fragment {
 
 	ArrayList<String> textArr = new ArrayList<String>();
 	ArrayList<String> numArr = new ArrayList<String>();
+
 	String name;
 	String number;
 	boolean spreadList; // 친구 목록을 false일 때 한 번만 불러오고, 불러온 뒤에는 true로 바꾸게 설정
-
-	// ////사운드//////
-	SoundPool mPool;
-	int mDdok;
-
-	// ////진동//////
-	Vibrator mVib;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -67,11 +60,6 @@ public class FriendsTab extends Fragment {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				new SendPush(getActivity()).execute(numArr.get(position));
-
-				// ////////////사운드재생///////////////
-				// mPool.play(mDdok, 1, 1, 0, 0, 1);
-				// /////////////진동재생///////////////
-				// mVib.vibrate(500);
 
 				Toast.makeText(getActivity(),
 						textArr.get(position) + "에게 따란을 전송합니다",
@@ -122,41 +110,4 @@ public class FriendsTab extends Fragment {
 
 	}
 
-	@Override
-	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-		// TODO Auto-generated method stub
-		super.onCreateOptionsMenu(menu, inflater);
-		
-	    MenuInflater mInflater = getActivity().getMenuInflater();
-	    mInflater.inflate(R.menu.pop, menu);
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		switch (item.getItemId()) {
-        case R.id.action_search:
-        	Toast.makeText(getActivity(), "action_search Selected", Toast.LENGTH_SHORT).show();
-            openSearch();
-            return true;
-        case R.id.action_settings:
-        	Toast.makeText(getActivity(), "action_settings Selected ", Toast.LENGTH_SHORT).show();
-            openSettings();
-            return true;
-        default:
-            return super.onOptionsItemSelected(item);
-    }
-	}
-
-	private void openSettings() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	private void openSearch() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
-	
 }// class
