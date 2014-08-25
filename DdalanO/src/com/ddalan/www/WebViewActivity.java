@@ -6,14 +6,16 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import com.ddalan.gcm.AddFriend;
-import com.ddalan.gcm.AddUser;
 import com.ddalan.gcm.GcmRegID;
+import com.ddalan.server.AddFriend;
+import com.ddalan.server.AddUser;
 
 public class WebViewActivity extends Activity {
 
@@ -78,6 +80,8 @@ public class WebViewActivity extends Activity {
 				// 서버에 유저 정보 보내기
 				new AddUser(getApplicationContext()).execute(user[0], user[1], user[2]); 
 				// 서버에 친구 정보 보내기
+				
+			
 				new AddFriend(getApplicationContext()).execute();
 				
 				Intent intent = new Intent(mContext.getApplicationContext(),MainActivity.class );
