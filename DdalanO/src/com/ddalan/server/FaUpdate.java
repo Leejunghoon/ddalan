@@ -1,10 +1,9 @@
 package com.ddalan.server;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
@@ -15,27 +14,38 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.EntityUtils;
-import org.json.JSONObject;
 
-import com.ddalan.www.FavoritesTab;
-
-import android.content.ContentResolver;
 import android.content.Context;
-import android.database.Cursor;
 import android.os.AsyncTask;
-import android.os.Handler;
-import android.os.Message;
-import android.provider.ContactsContract;
 
 
-public class GetFriends extends Thread{
-	String	res;
-	@Override
-	public void run() {
-				
+public class FaUpdate extends AsyncTask<String, Void, Void> {
+		
+	Context mContext;
+	
+	public FaUpdate(Context context){
+		mContext = context;
+	}
+	
+	protected Void doInBackground(String... phone) {
+			 executeClient(phone[0]);
+			return null;
 			
+		}
+
+		protected void onPostExecute(String result) {
+			// ��� �۾��� ��ġ�� ������ �� (�޼ҵ� ���)
+		}
+		
+		// ���� ����ϴ� �κ�
+		public String executeClient(String num) {
+			InputStream content;
+			ArrayList<NameValuePair> post = new ArrayList<NameValuePair>();
+			post.add(new BasicNameValuePair("phone", num));
+			
+		
+			// ���� HttpClient ��ü ��
 			HttpClient client = new DefaultHttpClient();
-						
 			
 			// ��ü ���� ���� �κ�, ���� �ִ�ð� ���
 			HttpParams params = client.getParams();
@@ -43,34 +53,19 @@ public class GetFriends extends Thread{
 			HttpConnectionParams.setSoTimeout(params, 5000);
 			
 			
-			// Post��ü ��
-			HttpPost httpPost = new HttpPost("http://192.168.0.79:8080/getFriends.do");
+			// Post
+			HttpPost httpPost = new HttpPost("http://192.168.0.79:8080/FaUpdate.do");
+			
 			try {
+				UrlEncodedFormEntity entity = new UrlEncodedFormEntity(post, "UTF-8");
+				httpPost.setEntity(entity);
+				client.execute(httpPost);
 				
-				HttpResponse response = client.execute(httpPost);
+				return EntityUtils.getContentCharSet(entity);
 		
-				HttpEntity resEntity = response.getEntity();
-				if (resEntity != null) {
-					System.out.println("리스폰 성공");
-					res = EntityUtils.toString(resEntity, "utf-8");
-					System.out.println("데이터 "+res);
-				//  mHandler.sendEmptyMessage(res);	
-					
-				}
-				
-			} catch (ClientProtocolException e) {
-				e.printStackTrace();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			
+			return null;
 		}
-
-	
-	
-	
-	
 }
-		
-		
-		

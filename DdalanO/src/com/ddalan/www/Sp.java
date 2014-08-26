@@ -19,7 +19,7 @@ public class Sp extends Activity implements Runnable {
 
 		ActionBar actionBar = getActionBar();
 
-		// ¾×¼Ç¹Ù ¼û±è!
+		// ï¿½×¼Ç¹ï¿½ ï¿½ï¿½ï¿½!
 		actionBar.hide();
 
 		setContentView(R.layout.splash);
@@ -29,21 +29,21 @@ public class Sp extends Activity implements Runnable {
 
 	@Override
 	public void run() {
-		// 3ÃÊ µô·¹ÀÌ
+		// 3ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		try {
 			Thread.sleep(3000);
 		} catch (Exception e) {
 		}
 
-		// ´ÙÀÌ¾ó·Î±× ´ÝÀ½
+		// ï¿½ï¿½ï¿½Ì¾ï¿½Î±ï¿½ ï¿½ï¿½ï¿½ï¿½
 		CDialog.hideLoading();
 
-		// Ã¹·Î±×ÀÎ & ±âÁ¸ »ç¿ëÀÚ È­¸é ÀÌµ¿ ·ÎÁ÷ //
-
-		// GCM DeviceID µî·Ï
+		// Ã¹ï¿½Î±ï¿½ï¿½ï¿½ & ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½ ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ //
+		
+		// GCM DeviceID ï¿½ï¿½ï¿½
 		final String regId = GCMRegistrar
 				.getRegistrationId(getApplicationContext());
-		// µî·ÏµÈ ID°¡ ¾øÀ¸¸é ID°ªÀ» ¾ò¾î¿É´Ï´Ù
+		// ï¿½ï¿½Ïµï¿½ IDï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ IDï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½É´Ï´ï¿½
 		if (regId.equals("") || regId == null) {
 			GCMRegistrar.register(getApplicationContext(), SENDER_ID);
 			Intent intent = new Intent(this, WebViewActivity.class);
@@ -54,7 +54,7 @@ public class Sp extends Activity implements Runnable {
 			Log.w(TAG, "deviceID Registered : " + regId);
 		}
 
-		// ´Ü¸»±â Back¹öÆ°À» ´­·¶À» ¶§, ÀÎÆ®·Î È­¸éÀ¸·Î µ¹¾Æ¿ÀÁö ¾Êµµ·Ï ÀÎÆ®·Î È­¸éÀ» Á¾·á
+		// ï¿½Ü¸ï¿½ï¿½ï¿½ Backï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½, ï¿½ï¿½Æ®ï¿½ï¿½ È­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Æ¿ï¿½ï¿½ï¿½ ï¿½Êµï¿½ï¿½ï¿½ ï¿½ï¿½Æ®ï¿½ï¿½ È­ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		finish();
 	}
 

@@ -1,12 +1,24 @@
 package com.ddalan.www;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
-import android.app.ActionBar;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.params.HttpConnectionParams;
+import org.apache.http.params.HttpParams;
+import org.apache.http.util.EntityUtils;
+
 import android.app.Fragment;
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,34 +35,39 @@ public class FavoritesTab extends Fragment {
 	ArrayList<String> rareNameArr = new ArrayList<String>();
 	ArrayList<String> rareNumArr = new ArrayList<String>();
 	boolean spreadList;
-
+	static int one = 0;
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View friendView = inflater.inflate(R.layout.favoritestab, container,
 				false);
 
-		// ÁÖ¼Ò·Ï¿¡¼­ ÀÌ¸§¸¸ °¡Á®¿Í¼­ ÀúÀå..
+		// ï¿½Ö¼Ò·Ï¿ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ ï¿½ï¿½ï¿½ï¿½..
 		if (spreadList == false) {
-			getFavNumber(getActivity().getContentResolver());
-			getRareNumber();
+			
 			spreadList = true;
 		}
-
-		// Ä£±¸¸ñ·Ï ±×¸®µåºä¿¡ µ¥ÀÌÅÍ ¹ÙÀÎµù ÀÛ¾÷
+		new FaF().start();
+		
+		
+	//	System.out.println("ì´ë¦„ : "+favNameArr.get(0));
+		// Ä£ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½×¸ï¿½ï¿½ï¿½ä¿¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Îµï¿½ ï¿½Û¾ï¿½
 		GridView rareView = (GridView) friendView.findViewById(R.id.grid2);
-		rareView.setAdapter(new FavoritesAdapter(this.getActivity(),
-				rareNameArr, rareNumArr));
+		// ì“°ë ˆë“œ ì ìš©
+	    
+		rareView.setAdapter(new FavoritesAdapter(this.getActivity(),	rareNameArr, rareNumArr));
+	    
+	    
 		rareView.setOnItemClickListener(new OnItemClickListener() {
 
-			// Ä£±¸(Item)¸¦ ´­·¶À» ¶§(Click) ¹«¾ùÀ» ½ÇÇàÇÒÁö ¸Ş¼Òµå ±¸Çö. Áö±İÀº Åä½ºÆ®.
+			// Ä£ï¿½ï¿½(Item)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½(Click) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ş¼Òµï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ä½ºÆ®.
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
-				System.out.println("À¸ÇÏÇÏ");
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 				Toast.makeText(getActivity(),
-						rareNameArr.get(position) + "¿¡°Ô µû¶õÀ» Àü¼ÛÇÕ´Ï´Ù",
+						rareNameArr.get(position) + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½",
 						Toast.LENGTH_SHORT).show();
 
 			}
@@ -66,8 +83,8 @@ public class FavoritesTab extends Fragment {
 				String picStr = rareNumArr.get(position);
 				int picNo = Integer.parseInt(picStr.substring(picStr.length() - 1));
 
-				System.out.println("±æ°Ô ´©¸§, " + position + "¹ø ¼±ÅÃµÊ!!");
-				// Åõ¸íÇÑ ¾×Æ¼ºñÆ¼(WebDialog) ¾×Æ¼ºñÆ¼¸¦ ½ÃÀÛÇÑ´Ù.
+				System.out.println("ì„ íƒëœ, " + position + "ë‹¤ë‹¤ë‹¤!!");
+				//WebDialog
 				Intent intent = new Intent(getActivity(), FriendDialog.class);
 				intent.putExtra("position", position);
 				intent.putExtra("name", rareNameArr.get(position));
@@ -85,14 +102,14 @@ public class FavoritesTab extends Fragment {
 				favNumArr));
 		favView.setOnItemClickListener(new OnItemClickListener() {
 
-			// Ä£±¸(Item)¸¦ ´­·¶À» ¶§(Click) ¹«¾ùÀ» ½ÇÇàÇÒÁö ¸Ş¼Òµå ±¸Çö. Áö±İÀº Åä½ºÆ®.
+			// Ä£ï¿½ï¿½(Item)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½(Click) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ş¼Òµï¿½ ï¿½ï¿½ï¿½ï¿½. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ä½ºÆ®.
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
-				System.out.println("À¸ÇÏÇÏ");
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 				Toast.makeText(getActivity(),
-						favNameArr.get(position) + "¿¡°Ô µû¶õÀ» Àü¼ÛÇÕ´Ï´Ù",
+						favNameArr.get(position) + "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½",
 						Toast.LENGTH_SHORT).show();
 
 			}
@@ -108,8 +125,8 @@ public class FavoritesTab extends Fragment {
 				String picStr = favNumArr.get(position);
 				int picNo = Integer.parseInt(picStr.substring(picStr.length() - 1));
 
-				System.out.println("±æ°Ô ´©¸§, " + position + "¹ø ¼±ÅÃµÊ!!");
-				// Åõ¸íÇÑ ¾×Æ¼ºñÆ¼(WebDialog) ¾×Æ¼ºñÆ¼¸¦ ½ÃÀÛÇÑ´Ù.
+				System.out.println("ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, " + position + "ï¿½ï¿½ ï¿½ï¿½ï¿½Ãµï¿½!!");
+				// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ¼ï¿½ï¿½Æ¼(WebDialog) ï¿½ï¿½Æ¼ï¿½ï¿½Æ¼ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´ï¿½.
 				Intent intent = new Intent(getActivity(), FriendDialog.class);
 				intent.putExtra("position", position);
 				intent.putExtra("name", favNameArr.get(position));
@@ -122,37 +139,83 @@ public class FavoritesTab extends Fragment {
 		});
 		return friendView;
 	}
-
-	public void getFavNumber(ContentResolver cr) {
-
-		// db¿¡¼­ Áñ°ÜÃ£±â Ä£±¸ °¡Á®¿À´Â ¸Ş¼­µå ÀÛ¼º
-
-		favNameArr.add("Â¡Â¡ÀÌ1");
-		favNameArr.add("Â¡Â¡ÀÌ2");
-		favNameArr.add("Â¡Â¡ÀÌ3");
-		favNameArr.add("Â¡Â¡ÀÌ4");
-		favNameArr.add("Â¡Â¡ÀÌ5");
-		favNameArr.add("Â¡Â¡ÀÌ6");
-
-		favNumArr.add("0100000001");
-		favNumArr.add("0100000002");
-		favNumArr.add("0100000003");
-		favNumArr.add("0100000004");
-		favNumArr.add("0100000005");
-		favNumArr.add("0100000006");
-
+		
+	class FaF extends Thread {
+	 
+	    
+	    @Override
+	    public void run() { // í•¸ë“¤ëŸ¬ë¡œ ì¹´ìš´í„°ë¥¼ ë³´ë‚¸ë‹¤.
+	        
+	      
+	        	
+	        	HttpClient client = new DefaultHttpClient();
+				
+				String res;
+				// ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½
+				HttpParams params = client.getParams();
+				HttpConnectionParams.setConnectionTimeout(params, 5000);
+				HttpConnectionParams.setSoTimeout(params, 5000);
+				
+				
+				// Postï¿½ï¿½Ã¼ ï¿½ï¿½
+				HttpPost httpPost = new HttpPost("http://192.168.0.79:8080/FavFriends.do");
+				try {
+					
+					HttpResponse response = client.execute(httpPost);
+			
+					HttpEntity resEntity = response.getEntity();
+					if (resEntity != null) {
+						System.out.println("ë¦¬ìŠ¤í° ì„±ê³µ");
+						res = EntityUtils.toString(resEntity, "utf-8");
+						System.out.println("ë°ì´í„° "+res);
+					  Message msg  = new Message();
+					  msg.obj = res;
+					  mHandler.sendMessage(msg);	
+					
+					}
+					
+				} catch (ClientProtocolException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				
+	        	
+	      
+	    }
 	}
 
-	public void getRareNumber() {
 
-		rareNameArr.add("¿¬¶ôÁ»ÇØ1");
-		rareNameArr.add("¿¬¶ôÁ»ÇØ2");
-		rareNameArr.add("¿¬¶ôÁ»ÇØ3");
 
-		rareNumArr.add("82821");
-		rareNumArr.add("82822");
-		rareNumArr.add("82823");
+	private final Handler mHandler = new Handler() { //í•¸ë“¤ëŸ¬ë¥¼ í†µí•´ UIìŠ¤ë ˆë“œì— ì ‘ê·¼í•œë‹¤.
+
+	    @Override
+	    public void handleMessage(Message msg) {
+	        super.handleMessage(msg);
+	        String res = (String)msg.obj;
+	        System.out.println("í•¸ë“¤ëŸ¬ ë©”ì„¸ì§€"+ res);
+	        String name = res.substring(8, 11);
+	        String phone = res.substring(21, 32);
+	        
+	        System.out.println("name"+name);
+	        System.out.println("phone"+phone);
+	        getFav(name, phone);
+	       
+	        
+	        
+	        
+	    }
+	    
+	};
+
+
+	public void getFav(String name , String phone){
+		
+			favNameArr.add(name);
+	        favNumArr.add(phone);
+	      
 	}
-
+	
 
 }
+

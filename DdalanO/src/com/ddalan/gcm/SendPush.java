@@ -14,6 +14,7 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
+import org.apache.http.util.EntityUtils;
 
 import android.content.Context;
 import android.os.AsyncTask;
@@ -34,36 +35,35 @@ public class SendPush extends AsyncTask<String, Void, Void> {
 		}
 
 		protected void onPostExecute(String result) {
-			// ¸ðµÎ ÀÛ¾÷À» ¸¶Ä¡°í ½ÇÇàÇÒ ÀÏ (¸Þ¼Òµå µîµî)
+			// ï¿½ï¿½ï¿½ ï¿½Û¾ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ (ï¿½Þ¼Òµï¿½ ï¿½ï¿½ï¿½)
 		}
 		
-		// ½ÇÁ¦ Àü¼ÛÇÏ´Â ºÎºÐ
-		public InputStream executeClient(String num) {
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Îºï¿½
+		public String executeClient(String num) {
 			InputStream content;
 			ArrayList<NameValuePair> post = new ArrayList<NameValuePair>();
 			post.add(new BasicNameValuePair("phone", num));
 			
 		
-			// ¿¬°á HttpClient °´Ã¼ »ý¼º
+			// ï¿½ï¿½ï¿½ï¿½ HttpClient ï¿½ï¿½Ã¼ ï¿½ï¿½
 			HttpClient client = new DefaultHttpClient();
 			
-			// °´Ã¼ ¿¬°á ¼³Á¤ ºÎºÐ, ¿¬°á ÃÖ´ë½Ã°£ µîµî
+			// ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Îºï¿½, ï¿½ï¿½ï¿½ï¿½ ï¿½Ö´ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½
 			HttpParams params = client.getParams();
 			HttpConnectionParams.setConnectionTimeout(params, 5000);
 			HttpConnectionParams.setSoTimeout(params, 5000);
 			
 			
-			// Post°´Ã¼ »ý¼º
+			// Postï¿½ï¿½Ã¼ ï¿½ï¿½
 			HttpPost httpPost = new HttpPost("http://192.168.0.79:8080/push.do");
 			
 			try {
 				UrlEncodedFormEntity entity = new UrlEncodedFormEntity(post, "UTF-8");
 				httpPost.setEntity(entity);
-				HttpResponse respone = client.execute(httpPost);
-				
-				content = respone.getEntity().getContent();
-				
-				return content;
+				 client.execute(httpPost);
+			
+			 return EntityUtils.getContentCharSet(entity);
+			
 			} catch (ClientProtocolException e) {
 				e.printStackTrace();
 			} catch (IOException e) {

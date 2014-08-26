@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ddalan.server.FaUpdate;
+
 public class FriendDialog extends Activity {
 
 	String name;
@@ -18,11 +20,10 @@ public class FriendDialog extends Activity {
 	TextView numberView;
 	ImageView imageView;
 	int position;
-	String number;
 	int photoFromIntent;
 
 	public FriendDialog() {
-		System.out.println("WebDialogÀÇ µğÆúÆ® »ı¼ºÀÚ ¾È");
+	
 	}
 
 	/** Called when the activity is first created. */
@@ -34,13 +35,13 @@ public class FriendDialog extends Activity {
 		Intent intent2 = getIntent();
 		position = intent2.getExtras().getInt("position");
 		name = intent2.getExtras().getString("name");
-		number = intent2.getExtras().getString("number");
+		phone = intent2.getExtras().getString("number");
 		photoFromIntent = intent2.getExtras().getInt("dialogpic");
 
 		nameView = (TextView) findViewById(R.id.namespace);
 		numberView = (TextView) findViewById(R.id.numberspace);
 		nameView.setText(name);
-		numberView.setText(number);
+		numberView.setText(phone);
 
 		imageView = (ImageView) findViewById(R.id.photospace);
 
@@ -91,24 +92,24 @@ public class FriendDialog extends Activity {
 	public void btnOnClick(View view) {
 		switch (view.getId()) {
 		case R.id.btn1:
-			Toast.makeText(FriendDialog.this, "ÀüÈ­°É±â", Toast.LENGTH_SHORT).show();
+			Toast.makeText(FriendDialog.this, "ï¿½ï¿½È­ï¿½É±ï¿½", Toast.LENGTH_SHORT).show();
 			Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tel:"
-					+ number));
+					+ phone));
 			startActivity(intent);
 			break;
 
 		case R.id.btn2:
-			Toast.makeText(FriendDialog.this, "°¡Á®¿Â Æ÷Áö¼Ç °ª=" + position,
-					Toast.LENGTH_SHORT).show();
+			new FaUpdate(this).execute(phone);
+			Toast.makeText(FriendDialog.this, "ì¦ê²¨ì°¾ê¸° ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤.", Toast.LENGTH_SHORT).show();
 			break;
 
 		case R.id.btn3:
-			Intent itt = new Intent(Intent.ACTION_PICK); // ACTION_PICK¾×¼ÇÀ» »ç¿ëÇÏ´Â
-															// ¿¹
+			Intent itt = new Intent(Intent.ACTION_PICK); // ACTION_PICKï¿½×¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï´ï¿½
+															// ï¿½ï¿½
 			itt.setData(Uri.parse("content://com.android.contacts/data/phones"));
 			startActivityForResult(itt, 0);
 
-			Toast.makeText(FriendDialog.this, "Ä£±¸ »èÁ¦", Toast.LENGTH_SHORT).show();
+			Toast.makeText(FriendDialog.this, "Ä£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½", Toast.LENGTH_SHORT).show();
 			break;
 
 		}
