@@ -19,7 +19,7 @@ public class HistoryTab extends Fragment {
 	ListView list;
 	boolean spreadList;
 
-	// 1.data Á¦ÀÛ
+	// 1.data ï¿½ï¿½ï¿½ï¿½
 	ArrayList<String> nameArr = new ArrayList<String>();
 	ArrayList<String> numArr = new ArrayList<String>();
 
@@ -35,7 +35,7 @@ public class HistoryTab extends Fragment {
 
 		list = (ListView) rootView.findViewById(R.id.listhistory);
 
-		// 2.Adapter ±¸¼º
+		// 2.Adapter ï¿½ï¿½ï¿½ï¿½
 		MyListAdapter MyAdapter = new MyListAdapter(getActivity(),
 				R.layout.icontext, nameArr, numArr);
 
@@ -47,34 +47,15 @@ public class HistoryTab extends Fragment {
 
 	public void getHisNumber() {
 
-		// db¿¡¼­ Áñ°ÜÃ£±â Ä£±¸ °¡Á®¿À´Â ¸Ş¼­µå ÀÛ¼º
+		// dbï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã£ï¿½ï¿½ Ä£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ş¼ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½
 
-		nameArr.add("Â¡Â¡ÀÌ1");
-		nameArr.add("Â¡Â¡ÀÌ2");
-		nameArr.add("Â¡Â¡ÀÌ2");
-		nameArr.add("Â¡Â¡ÀÌ4");
-		nameArr.add("Â¡Â¡ÀÌ5");
-		nameArr.add("Â¡Â¡ÀÌ5");
-		nameArr.add("Â¡Â¡ÀÌ3");
-		nameArr.add("Â¡Â¡ÀÌ2");
-		nameArr.add("Â¡Â¡ÀÌ1");
-		nameArr.add("Â¡Â¡ÀÌ1");
-		nameArr.add("Â¡Â¡ÀÌ1");
-		nameArr.add("Â¡Â¡ÀÌ2");
+		nameArr.add("ì´ìŠ¬ì´ì—ê²Œ ì•ˆë¶€ê°€ ì™”ì–´ìš”.");
+		nameArr.add("ì¡°í˜„ì„±ì—ê²Œ ì•ˆë¶€ê°€ ì™”ì–´ìš”.");
+		
 
-		numArr.add("¿ÀÈÄ 3:46");
-		numArr.add("¿ÀÈÄ 3:47");
-		numArr.add("¿ÀÈÄ 2:11");
-		numArr.add("¿ÀÈÄ 1:14");
-		numArr.add("¿ÀÀü 8:23");
-		numArr.add("¿ÀÀü 10:23");
-		numArr.add("¿ÀÀü 10:32");
-		numArr.add("¿ÀÀü 10:32");
-		numArr.add("2014/8/20");
-		numArr.add("2014/8/20");
-		numArr.add("2014/8/19");
-		numArr.add("2014/8/19");
-
+		numArr.add("Date : 4:10");
+		numArr.add("Date : 4:11");
+		
 	}
 
 	/*

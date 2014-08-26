@@ -34,6 +34,10 @@ public class FavoritesTab extends Fragment {
 
 	ArrayList<String> rareNameArr = new ArrayList<String>();
 	ArrayList<String> rareNumArr = new ArrayList<String>();
+	
+	
+	
+	GridView favView ;
 	boolean spreadList;
 	static int one = 0;
 	@Override
@@ -41,16 +45,18 @@ public class FavoritesTab extends Fragment {
 			Bundle savedInstanceState) {
 		View friendView = inflater.inflate(R.layout.favoritestab, container,
 				false);
-
+		
 		// �ּҷϿ��� �̸��� �����ͼ� ����..
 		if (spreadList == false) {
 			
+			
 			spreadList = true;
 		}
+		
+
 		new FaF().start();
 		
-		
-	//	System.out.println("이름 : "+favNameArr.get(0));
+
 		// ģ����� �׸���信 ������ ���ε� �۾�
 		GridView rareView = (GridView) friendView.findViewById(R.id.grid2);
 		// 쓰레드 적용
@@ -65,9 +71,9 @@ public class FavoritesTab extends Fragment {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
-				System.out.println("������");
+			
 				Toast.makeText(getActivity(),
-						rareNameArr.get(position) + "���� ����� ����մϴ�",
+						rareNameArr.get(position) + "연락 좀 해",
 						Toast.LENGTH_SHORT).show();
 
 			}
@@ -97,7 +103,7 @@ public class FavoritesTab extends Fragment {
 
 		});
 
-		GridView favView = (GridView) friendView.findViewById(R.id.grid);
+		favView = (GridView) friendView.findViewById(R.id.grid);
 		favView.setAdapter(new FavoritesAdapter(this.getActivity(), favNameArr,
 				favNumArr));
 		favView.setOnItemClickListener(new OnItemClickListener() {
@@ -109,7 +115,7 @@ public class FavoritesTab extends Fragment {
 
 				System.out.println("������");
 				Toast.makeText(getActivity(),
-						favNameArr.get(position) + "���� ����� ����մϴ�",
+						favNameArr.get(position) + "선택됨",
 						Toast.LENGTH_SHORT).show();
 
 			}
@@ -125,7 +131,7 @@ public class FavoritesTab extends Fragment {
 				String picStr = favNumArr.get(position);
 				int picNo = Integer.parseInt(picStr.substring(picStr.length() - 1));
 
-				System.out.println("��� ����, " + position + "�� ���õ�!!");
+			
 				// ������ ��Ƽ��Ƽ(WebDialog) ��Ƽ��Ƽ�� �����Ѵ�.
 				Intent intent = new Intent(getActivity(), FriendDialog.class);
 				intent.putExtra("position", position);
@@ -194,11 +200,14 @@ public class FavoritesTab extends Fragment {
 	        super.handleMessage(msg);
 	        String res = (String)msg.obj;
 	        System.out.println("핸들러 메세지"+ res);
-	        String name = res.substring(8, 11);
-	        String phone = res.substring(21, 32);
 	        
-	        System.out.println("name"+name);
-	        System.out.println("phone"+phone);
+	        String name = res.substring(res.indexOf("{") + 8, res.indexOf("]"));
+			String phone = res.substring(res.indexOf("\"fp\":\"[") + 7, res.indexOf("}")-2);
+			System.out.println("이름:"+name);
+			System.out.println("폰:"+phone);
+
+			        	        
+	        
 	        getFav(name, phone);
 	       
 	        
@@ -211,10 +220,33 @@ public class FavoritesTab extends Fragment {
 
 	public void getFav(String name , String phone){
 		
-			favNameArr.add(name);
-	        favNumArr.add(phone);
+		
+		String[] nameArr = name.split(", ");
+		String[] phoneArr = phone.split(", ");
+        
+		for(int i = 0; i < nameArr.length; i++){
+			favNameArr.add(nameArr[i]);
+	        favNumArr.add(phoneArr[i]);
+	        
+		}
 	      
 	}
+
+
+/*	@Override
+	public void onDestroyView() {
+		// TODO Auto-generated method stub
+		super.onDestroyView();
+		favNameArr.removeAll(favNameArr);
+		favNumArr.removeAll(favNumArr);
+		
+	}*/
+
+
+
+
+
+	
 	
 
 }

@@ -9,14 +9,14 @@ import android.support.v4.app.FragmentActivity;
 
 public class MainActivity extends FragmentActivity {
 
-	// ÅÇµéÀ» µî·ÏÇÏ°í °ü¸®ÇÏ´Â Activity ÇÏ³ª.
-	// ÅÇµéÀ» Ç¥ÇöÇÒ Fragment µéÀÌ ÅÇÀÇ °³¼ö¸¸Å­
-	// TabListener ÇÏ³ª.
+	// ï¿½Çµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ Activity ï¿½Ï³ï¿½.
+	// ï¿½Çµï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½ï¿½ Fragment ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å­
+	// TabListener ï¿½Ï³ï¿½.
 
-	// Tab º¯¼ö ¼±¾ð
+	// Tab ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	ActionBar.Tab Tab1, Tab2, Tab3, Tab4;
-	Fragment fragmentTab1 = new FavoritesTab();
-	Fragment fragmentTab2 = new FriendsTab();
+	Fragment fragmentTab1 = new FriendsTab();
+	Fragment fragmentTab2 = new FavoritesTab();
 	Fragment fragmentTab3 = new HistoryTab();
 	Fragment fragmentTab4 = new SettingsTab();
 
@@ -30,27 +30,27 @@ public class MainActivity extends FragmentActivity {
 		actionBar.setBackgroundDrawable(new ColorDrawable(Color
 				.parseColor("#ffcd00")));
 
-		// ¾×¼Ç¹ÙÀÇ ±âº»·Î°í¾ÆÀÌÄÜ ¼û±â±â
+		// ï¿½×¼Ç¹ï¿½ï¿½ï¿½ ï¿½âº»ï¿½Î°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		actionBar.setDisplayShowHomeEnabled(true);
-		// ¾×¼Ç¹ÙÀÇ ±âº»Å¸ÀÌÆ² ¼û±â±â
+		// ï¿½×¼Ç¹ï¿½ï¿½ï¿½ ï¿½âº»Å¸ï¿½ï¿½Æ² ï¿½ï¿½ï¿½ï¿½
 		actionBar.setDisplayShowTitleEnabled(true);
-		// °¡Àå Áß¿äÇÑ ActionBar¸ðµå¸¦ ActionBar.NAVIGATION_MODE_TABS·Î ¼³Á¤ÇØÁÖ¸é °£´ÜÇÏ°Ô ÅÇÀ»
-		// ±¸ÇöÇÒ¼ö ÀÖ´Ù.
+		// ï¿½ï¿½ï¿½ï¿½ ï¿½ß¿ï¿½ï¿½ï¿½ ActionBarï¿½ï¿½å¸¦ ActionBar.NAVIGATION_MODE_TABSï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½
+		// ï¿½ï¿½ï¿½ï¿½ï¿½Ò¼ï¿½ ï¿½Ö´ï¿½.
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-		// ÅÇ ¾ÆÀÌÄÜ°ú Å¸ÀÌÆ²À» ¼³Á¤
+		// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ü°ï¿½ Å¸ï¿½ï¿½Æ²ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		Tab1 = actionBar.newTab().setIcon(R.drawable.fav);
 		Tab2 = actionBar.newTab().setIcon(R.drawable.user);
 		Tab3 = actionBar.newTab().setIcon(R.drawable.history);
 		Tab4 = actionBar.newTab().setIcon(R.drawable.set);
 
-		// ÅÇ ¸®½º³Ê ¼³Á¤
+		// ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		Tab1.setTabListener(new TabListener(fragmentTab1));
 		Tab2.setTabListener(new TabListener(fragmentTab2));
 		Tab3.setTabListener(new TabListener(fragmentTab3));
 		Tab4.setTabListener(new TabListener(fragmentTab4));
 
-		// ¾×¼Ç¹Ù¿¡ ÅÇÃß°¡
+		// ï¿½×¼Ç¹Ù¿ï¿½ ï¿½ï¿½ï¿½ß°ï¿½
 		actionBar.addTab(Tab1);
 		actionBar.addTab(Tab2);
 		actionBar.addTab(Tab3);
