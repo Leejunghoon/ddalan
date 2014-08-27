@@ -25,7 +25,8 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.GridView;
-import android.widget.Toast;
+
+import com.ddalan.gcm.SendPush;
 
 public class FavoritesTab extends Fragment {
 	ArrayList<String> favNameArr = new ArrayList<String>();
@@ -45,10 +46,6 @@ public class FavoritesTab extends Fragment {
 				false);
 
 		// �좎뙇�뚮줉�몄삕�좎룞���좎떛紐뚯삕�좎룞���좎룞�쇿뜝�숈삕�좎떢�쎌삕 �좎룞�쇿뜝�숈삕..
-		if (spreadList == false) {
-
-			spreadList = true;
-		}
 
 		new FaF().start();
 
@@ -68,9 +65,10 @@ public class FavoritesTab extends Fragment {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
-				Toast.makeText(getActivity(),
-						rareNameArr.get(position) + "gggg", Toast.LENGTH_SHORT)
-						.show();
+				new SendPush(getActivity()).execute(rareNumArr.get(position));
+				Intent intent = new Intent(getActivity(), Frame_animation.class);
+
+				startActivity(intent);
 
 			}
 
@@ -85,7 +83,6 @@ public class FavoritesTab extends Fragment {
 				String picStr = rareNumArr.get(position);
 				int picNo = Integer.parseInt(picStr.substring(picStr.length() - 1));
 
-				System.out.println("占쎌쥚源�옙占�" + position + "占썬끇�롳옙占�");
 				// WebDialog
 				Intent intent = new Intent(getActivity(), FriendDialog.class);
 				intent.putExtra("position", position);
@@ -110,12 +107,10 @@ public class FavoritesTab extends Fragment {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
+				new SendPush(getActivity()).execute(favNumArr.get(position));
+				Intent intent = new Intent(getActivity(), Frame_animation.class);
 
-				System.out.println("�좎룞�쇿뜝�숈삕�좎룞��");
-				Toast.makeText(getActivity(),
-						favNameArr.get(position) + "占쎌쥚源�옙占�",
-						Toast.LENGTH_SHORT).show();
-
+				startActivity(intent);
 			}
 
 		});
@@ -196,8 +191,6 @@ public class FavoritesTab extends Fragment {
 			String name = res.substring(res.indexOf("{") + 8, res.indexOf("]"));
 			String phone = res.substring(res.indexOf("\"fp\":\"[") + 7,
 					res.indexOf("}") - 2);
-			System.out.println("占쎈�已�" + name);
-			System.out.println("占쏙옙" + phone);
 
 			getFav(name, phone);
 
@@ -215,9 +208,26 @@ public class FavoritesTab extends Fragment {
 				favNameArr.add(nameArr[i]);
 				favNumArr.add(phoneArr[i]);
 			}
+			rareNameArr.add("임새샘");
+			rareNameArr.add("김영길");
+			rareNameArr.add("박종호");
+
+			rareNumArr.add("01099725514");
+			rareNumArr.add("01035868469");
+			rareNumArr.add("01052942085");
 		} else if (!favNameArr.isEmpty()) {
 			favNameArr.removeAll(favNameArr);
 			favNumArr.removeAll(favNumArr);
+			rareNameArr.removeAll(rareNameArr);
+			rareNumArr.removeAll(rareNumArr);
+			rareNameArr.add("임새샘");
+			rareNameArr.add("김영길");
+			rareNameArr.add("박종호");
+
+			rareNumArr.add("01099725514");
+			rareNumArr.add("01035868469");
+			rareNumArr.add("01052942085");
+
 			for (int i = 0; i < nameArr.length; i++) {
 				favNameArr.add(nameArr[i]);
 				favNumArr.add(phoneArr[i]);
@@ -226,4 +236,5 @@ public class FavoritesTab extends Fragment {
 		}
 
 	}
+
 }

@@ -63,13 +63,13 @@ public class GCMIntentService extends GCMBaseIntentService {
 		// 펜딩인텐트는 셋 중 선택, 하나만 만들기.
 
 		// 첫번째
-		PendingIntent pendingIntent = PendingIntent.getActivity(
-				getApplicationContext(), 0, intent,
-				Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
+		 PendingIntent pendingIntent = PendingIntent.getActivity(
+		 getApplicationContext(), 0, intent,
+		 Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
 		// 두번째
-		// PendingIntent pendingIntent2 = PendingIntent.getActivity(
-		// getApplicationContext(), 0, intent,
-		// Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
+		//PendingIntent pendingIntent2 = PendingIntent.getActivity(
+		//		getApplicationContext(), 0, intent,
+		//		Intent.FLAG_ACTIVITY_BROUGHT_TO_FRONT);
 		// 세번째
 		// PendingIntent pendingIntent3 = PendingIntent.getActivity(context, 0,
 		// new Intent(), 0);

@@ -25,7 +25,7 @@ public class MainActivity extends FragmentActivity {
 		actionBar.setBackgroundDrawable(new ColorDrawable(Color
 				.parseColor("#ffcd00")));
 
-		actionBar.setDisplayShowHomeEnabled(false);
+		actionBar.setDisplayShowHomeEnabled(true);
 		actionBar.setDisplayShowTitleEnabled(true);
 
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
