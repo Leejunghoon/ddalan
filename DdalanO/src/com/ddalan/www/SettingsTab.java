@@ -65,7 +65,7 @@ public class SettingsTab extends PreferenceFragment {
 		System.out.println("onActivityResult");
 		if(requestCode==GET_PICTURE_URI){
 			System.out.println("if 1");
-			setProfile.setIcon(R.drawable.man);
+			setProfile.setIcon(R.drawable.angela);
 	}
 
 }

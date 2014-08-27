@@ -8,7 +8,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
@@ -43,6 +42,9 @@ public class HistoryTab extends Fragment {
 
 		// 3.AdapterView
 		list.setAdapter(MyAdapter);
+		
+		Button btn=(Button)getActivity().findViewById(R.id.change);
+		btn.setText("보낸 따란");
 
 		return rootView;
 	}
@@ -101,19 +103,16 @@ public class HistoryTab extends Fragment {
 
 		@Override
 		public int getCount() {
-			// TODO Auto-generated method stub
 			return nameArr.size();
 		}
 
 		@Override
 		public Object getItem(int position) {
-			// TODO Auto-generated method stub
 			return nameArr.get(position);
 		}
 
 		@Override
 		public long getItemId(int position) {
-			// TODO Auto-generated method stub
 			return position;
 		}
 
@@ -144,9 +143,10 @@ public class HistoryTab extends Fragment {
 			txt.setText(nameArr.get(position));
 			TextView time = (TextView) convertView.findViewById(R.id.hisTime);
 			time.setText(numArr.get(position));
-			// TODO Auto-generated method stub
 			return convertView;
 		}
 	}
+
+
 
 }
