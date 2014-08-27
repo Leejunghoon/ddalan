@@ -20,20 +20,15 @@ public class HistoryTab extends Fragment {
 	ListView list;
 	boolean spreadList;
 
-	// 1.data 占쏙옙占쏙옙
+	// 1.data �좎룞�쇿뜝�숈삕
 	ArrayList<String> nameArr = new ArrayList<String>();
 	ArrayList<String> numArr = new ArrayList<String>();
 
-	Button recOrSent;
-	Button period;
-	Button resetBtn;
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View rootView = inflater.inflate(R.layout.historytab, container, false);
-		recOrSent=(Button)getActivity().findViewById(R.id.rOs);
-		period=(Button)getActivity().findViewById(R.id.period);
 
 		if (spreadList == false) {
 			getHisNumber();
@@ -42,7 +37,7 @@ public class HistoryTab extends Fragment {
 
 		list = (ListView) rootView.findViewById(R.id.listhistory);
 
-		// 2.Adapter 占쏙옙占쏙옙
+		// 2.Adapter �좎룞�쇿뜝�숈삕
 		MyListAdapter MyAdapter = new MyListAdapter(getActivity(),
 				R.layout.icontext, nameArr, numArr);
 
@@ -56,13 +51,11 @@ public class HistoryTab extends Fragment {
 
 	public void getHisNumber() {
 
-		// db占쏙옙占쏙옙 占쏙옙占시ｏ옙占�친占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쌨쇽옙占쏙옙 占쌜쇽옙
+		nameArr.add("조현성님으로부터 따란이 도착했어요.");
+		nameArr.add("남기환님으로부터 따란이 도착했어요.");
 
-		nameArr.add("�댁뒳�댁뿉寃��덈�媛��붿뼱��");
-		nameArr.add("議고쁽�깆뿉寃��덈�媛��붿뼱��");
-
-		numArr.add("Date : 4:10");
-		numArr.add("Date : 4:11");
+		numArr.add("4:10");
+		numArr.add("4:11");
 
 	}
 

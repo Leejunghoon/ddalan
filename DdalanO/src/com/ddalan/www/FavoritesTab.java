@@ -18,7 +18,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.SystemClock;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +44,7 @@ public class FavoritesTab extends Fragment {
 		View friendView = inflater.inflate(R.layout.favoritestab, container,
 				false);
 
-		// 占쌍소록울옙占쏙옙 占싱몌옙占쏙옙 占쏙옙占쏙옙占싶쇽옙 占쏙옙占쏙옙..
+		// �좎뙇�뚮줉�몄삕�좎룞���좎떛紐뚯삕�좎룞���좎룞�쇿뜝�숈삕�좎떢�쎌삕 �좎룞�쇿뜝�숈삕..
 		if (spreadList == false) {
 
 			spreadList = true;
@@ -53,23 +52,23 @@ public class FavoritesTab extends Fragment {
 
 		new FaF().start();
 
-		// 친占쏙옙占쏙옙占�占쌓몌옙占쏙옙岳�占쏙옙占쏙옙占쏙옙 占쏙옙占싸듸옙 占쌜억옙
+		// 移쒎뜝�숈삕�좎룞�쇿뜝占썲뜝�볥챿�쇿뜝�숈삕略놂옙�좎룞�쇿뜝�숈삕�좎룞���좎룞�쇿뜝�몃벝���좎뙗�듭삕
 		GridView rareView = (GridView) friendView.findViewById(R.id.grid2);
-		// �곕젅���곸슜
+		// 占쎄퀡�낉옙占쏙옙怨몄뒠
 
 		rareView.setAdapter(new FavoritesAdapter(this.getActivity(),
 				rareNameArr, rareNumArr));
 
 		rareView.setOnItemClickListener(new OnItemClickListener() {
 
-			// 친占쏙옙(Item)占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙(Click) 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쌨소듸옙
-			// 占쏙옙占쏙옙. 占쏙옙占쏙옙占쏙옙 占썰스트.
+			// 移쒎뜝�숈삕(Item)�좎룞���좎룞�쇿뜝�숈삕�좎룞���좎룞��Click) �좎룞�쇿뜝�숈삕�좎룞���좎룞�쇿뜝�숈삕�좎룞�쇿뜝�숈삕 �좎뙣�뚮벝��
+			// �좎룞�쇿뜝�숈삕. �좎룞�쇿뜝�숈삕�좎룞���좎뜲�ㅽ듃.
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
 				Toast.makeText(getActivity(),
-						rareNameArr.get(position) + "�곕씫 醫���",
+						rareNameArr.get(position) + "占쎄퀡���ワ옙占쏙옙",
 						Toast.LENGTH_SHORT).show();
 
 			}
@@ -85,7 +84,7 @@ public class FavoritesTab extends Fragment {
 				String picStr = rareNumArr.get(position);
 				int picNo = Integer.parseInt(picStr.substring(picStr.length() - 1));
 
-				System.out.println("�좏깮�� " + position + "�ㅻ떎��!");
+				System.out.println("占쎌쥚源�옙占�" + position + "占썬끇�롳옙占�");
 				// WebDialog
 				Intent intent = new Intent(getActivity(), FriendDialog.class);
 				intent.putExtra("position", position);
@@ -104,15 +103,15 @@ public class FavoritesTab extends Fragment {
 				favNumArr));
 		favView.setOnItemClickListener(new OnItemClickListener() {
 
-			// 친占쏙옙(Item)占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙(Click) 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쌨소듸옙
-			// 占쏙옙占쏙옙. 占쏙옙占쏙옙占쏙옙 占썰스트.
+			// 移쒎뜝�숈삕(Item)�좎룞���좎룞�쇿뜝�숈삕�좎룞���좎룞��Click) �좎룞�쇿뜝�숈삕�좎룞���좎룞�쇿뜝�숈삕�좎룞�쇿뜝�숈삕 �좎뙣�뚮벝��
+			// �좎룞�쇿뜝�숈삕. �좎룞�쇿뜝�숈삕�좎룞���좎뜲�ㅽ듃.
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
-				System.out.println("占쏙옙占쏙옙占쏙옙");
+				System.out.println("�좎룞�쇿뜝�숈삕�좎룞��");
 				Toast.makeText(getActivity(),
-						favNameArr.get(position) + "�좏깮��", Toast.LENGTH_SHORT)
+						favNameArr.get(position) + "占쎌쥚源�옙占�", Toast.LENGTH_SHORT)
 						.show();
 
 			}
@@ -128,7 +127,7 @@ public class FavoritesTab extends Fragment {
 				String picStr = favNumArr.get(position);
 				int picNo = Integer.parseInt(picStr.substring(picStr.length() - 1));
 
-				// 占쏙옙占쏙옙占쏙옙 占쏙옙티占쏙옙티(WebDialog) 占쏙옙티占쏙옙티占쏙옙 占쏙옙占쏙옙占싼댐옙.
+				// �좎룞�쇿뜝�숈삕�좎룞���좎룞�숉떚�좎룞�숉떚(WebDialog) �좎룞�숉떚�좎룞�숉떚�좎룞���좎룞�쇿뜝�숈삕�좎떬�먯삕.
 				Intent intent = new Intent(getActivity(), FriendDialog.class);
 				intent.putExtra("position", position);
 				intent.putExtra("name", favNameArr.get(position));
@@ -145,17 +144,17 @@ public class FavoritesTab extends Fragment {
 	class FaF extends Thread {
 
 		@Override
-		public void run() { // �몃뱾�щ줈 移댁슫�곕� 蹂대궦��
+		public void run() { // 占쎈챶諭억옙�以�燁삳똻�ワ옙怨뺧옙 癰귣�沅�옙占�
 
 			HttpClient client = new DefaultHttpClient();
 
 			String res;
-			// 占쏙옙체 占쏙옙占쏙옙 占쏙옙占쏙옙 占싸븝옙, 占쏙옙占쏙옙 占쌍댐옙챨占�占쏙옙占�
+			// �좎룞�숈껜 �좎룞�쇿뜝�숈삕 �좎룞�쇿뜝�숈삕 �좎떥釉앹삕, �좎룞�쇿뜝�숈삕 �좎뙇�먯삕梨ⓨ뜝占썲뜝�숈삕�좑옙
 			HttpParams params = client.getParams();
 			HttpConnectionParams.setConnectionTimeout(params, 5000);
 			HttpConnectionParams.setSoTimeout(params, 5000);
 
-			// Post占쏙옙체 占쏙옙
+			// Post�좎룞�숈껜 �좎룞��
 			HttpPost httpPost = new HttpPost(
 					"http://192.168.0.79:8080/FavFriends.do");
 			try {
@@ -164,9 +163,9 @@ public class FavoritesTab extends Fragment {
 
 				HttpEntity resEntity = response.getEntity();
 				if (resEntity != null) {
-					System.out.println("由ъ뒪���깃났");
+					System.out.println("�귐딅뮞占쏙옙占쎄퉫��");
 					res = EntityUtils.toString(resEntity, "utf-8");
-					System.out.println("�곗씠��" + res);
+					System.out.println("占쎄퀣�좑옙占� + res");
 					Message msg = new Message();
 					msg.obj = res;
 					mHandler.sendMessage(msg);
@@ -182,20 +181,20 @@ public class FavoritesTab extends Fragment {
 		}
 	}
 
-	private final Handler mHandler = new Handler() { // �몃뱾�щ� �듯빐 UI�ㅻ젅�쒖뿉
-														// �묎렐�쒕떎.
+	private final Handler mHandler = new Handler() { // 占쎈챶諭억옙�占�占쎈벏鍮�UI占썬끇�낉옙�뽯퓠
+														// 占쎈쵌�먲옙�뺣뼄.
 
 		@Override
 		public void handleMessage(Message msg) {
 			super.handleMessage(msg);
 			String res = (String) msg.obj;
-			System.out.println("�몃뱾��硫붿꽭吏�+ res");
+			System.out.println("占쎈챶諭억옙占쏙쭖遺욧쉭筌욑옙+ res");
 
 			String name = res.substring(res.indexOf("{") + 8, res.indexOf("]"));
 			String phone = res.substring(res.indexOf("\"fp\":\"[") + 7,
 					res.indexOf("}") - 2);
-			System.out.println("�대쫫:" + name);
-			System.out.println("��" + phone);
+			System.out.println("占쎈�已�" + name);
+			System.out.println("占쏙옙" + phone);
 
 			getFav(name, phone);
 
