@@ -9,15 +9,11 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
-import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.Toast;
 
@@ -62,7 +58,7 @@ public class FriendsTab extends Fragment {
 				new SendPush(getActivity()).execute(numArr.get(position));
 
 				Toast.makeText(getActivity(),
-						textArr.get(position) + "에게 따란을 전송합니다",
+						textArr.get(position) + "에게 따란을 전송합니다.",
 						Toast.LENGTH_SHORT).show();
 			}
 

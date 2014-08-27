@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -59,11 +58,7 @@ public class HistoryTab extends Fragment {
 
 	}
 
-	/*
-	 * class MyItem { int icon; String name;
-	 * 
-	 * MyItem(int icon, String name) { this.icon = icon; this.name = name; } }
-	 */
+
 	class MyListAdapter extends BaseAdapter {
 
 		Context mContext;
