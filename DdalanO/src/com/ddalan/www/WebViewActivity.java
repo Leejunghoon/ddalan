@@ -2,6 +2,7 @@ package com.ddalan.www;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
+import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -23,6 +24,11 @@ public class WebViewActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		ActionBar actionBar = getActionBar();
+
+		actionBar.hide();
+
 		setContentView(R.layout.webveiw);
 		mContext = this.getApplicationContext();
 	  
