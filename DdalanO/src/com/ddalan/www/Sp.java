@@ -4,7 +4,6 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.google.android.gcm.GCMRegistrar;
 
@@ -19,7 +18,7 @@ public class Sp extends Activity implements Runnable {
 
 		ActionBar actionBar = getActionBar();
 
-		// �׼ǹ� ���!
+		// 占쌓션뱄옙 占쏙옙占�
 		actionBar.hide();
 
 		setContentView(R.layout.splash);
@@ -29,22 +28,23 @@ public class Sp extends Activity implements Runnable {
 
 	@Override
 	public void run() {
-		// 3�� ������
+		// 3占쏙옙 占쏙옙占쏙옙占쏙옙
 		try {
 			Thread.sleep(3000);
 		} catch (Exception e) {
 		}
 
-		// ���̾�α� ����
+		// 占쏙옙占싱억옙慣占�占쏙옙占쏙옙
 		CDialog.hideLoading();
 
-		// ù�α��� & ���� ����� ȭ�� �̵� ���� //
-		
-		// GCM DeviceID ���
+		// 첫占싸깍옙占쏙옙 & 占쏙옙占쏙옙 占쏙옙占쏙옙占�화占쏙옙 占싱듸옙 占쏙옙占쏙옙 //
+		Intent intent = new Intent(this, MainActivity.class);
+		startActivity(intent);
+		// GCM DeviceID 占쏙옙占�
 		final String regId = GCMRegistrar
 				.getRegistrationId(getApplicationContext());
-		// ��ϵ� ID�� ������ ID���� ���ɴϴ�
-		if (regId.equals("") || regId == null) {
+		// 占쏙옙溝占�ID占쏙옙 占쏙옙占쏙옙占쏙옙 ID占쏙옙占쏙옙 占쏙옙占심니댐옙
+		/*if (regId.equals("") || regId == null) {
 			GCMRegistrar.register(getApplicationContext(), SENDER_ID);
 			Intent intent = new Intent(this, WebViewActivity.class);
 			startActivity(intent);
@@ -52,9 +52,9 @@ public class Sp extends Activity implements Runnable {
 			Intent intent = new Intent(this, MainActivity.class);
 			startActivity(intent);
 			Log.w(TAG, "deviceID Registered : " + regId);
-		}
+		}*/
 
-		// �ܸ��� Back��ư�� ������ ��, ��Ʈ�� ȭ������ ���ƿ��� �ʵ��� ��Ʈ�� ȭ���� ����
+		// 占쌤몌옙占쏙옙 Back占쏙옙튼占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙, 占쏙옙트占쏙옙 화占쏙옙占쏙옙占쏙옙 占쏙옙占싣울옙占쏙옙 占십듸옙占쏙옙 占쏙옙트占쏙옙 화占쏙옙占쏙옙 占쏙옙占쏙옙
 		finish();
 	}
 

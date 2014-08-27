@@ -56,14 +56,14 @@ public class FriendsTab extends Fragment {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				new SendPush(getActivity()).execute(numArr.get(position));
-				
+
 				Intent intent = new Intent(getActivity(), Frame_animation.class);
-				
+
 				startActivity(intent);
-/*
-				Toast.makeText(getActivity(),
-						textArr.get(position) + "에게 따란을 전송합니다.",
-						Toast.LENGTH_SHORT).show();*/
+				/*
+				 * Toast.makeText(getActivity(), textArr.get(position) +
+				 * "에게 따란을 전송합니다.", Toast.LENGTH_SHORT).show();
+				 */
 			}
 
 		});
@@ -93,21 +93,52 @@ public class FriendsTab extends Fragment {
 
 	// 전화번호부에서 이름, 전화번호를 가져옴(ContactsContract.CommonDataKinds 이용)
 	public void getNumber(ContentResolver cr) {
-		Cursor phones = cr.query(
-				ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null,
-				null, null);
-		// use the cursor to access the contacts
-		while (phones.moveToNext()) {
-			name = phones
-					.getString(phones
-							.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
-			number = phones
-					.getString(phones
-							.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-			textArr.add(name);
-			numArr.add(number);
-		}
-
+		/*
+		 * Cursor phones = cr.query(
+		 * ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null,
+		 * null); // use the cursor to access the contacts
+		 * 
+		 * name = phones .getString(phones
+		 * .getColumnIndex(ContactsContract.CommonDataKinds
+		 * .Phone.DISPLAY_NAME)); number = phones .getString(phones
+		 * .getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+		 */
+		textArr.add("이정훈");
+		numArr.add("010-4811-0702");
+		textArr.add("조현성");
+		numArr.add("010-4173-6582");
+		textArr.add("남기환");
+		numArr.add("010-5605-3458");
+		textArr.add("이슬이");
+		numArr.add("010-7111-2207");
+		textArr.add("김새봄");
+		numArr.add("010-5113-5408");
+		textArr.add("이기쁨");
+		numArr.add("010-4274-0075");
+		textArr.add("임새샘");
+		numArr.add("010-9972-5514");
+		textArr.add("곽재호");
+		numArr.add("010-9525-8390");
+		textArr.add("김영길");
+		numArr.add("010-3586-8469");
+		textArr.add("박종호");
+		numArr.add("010-5294-2085");
+		textArr.add("채예지");
+		numArr.add("010-5474-0475");
+		textArr.add("길민경");
+		numArr.add("010-5541-7537");
+		textArr.add("노영수");
+		numArr.add("010-2912-0606");
+		textArr.add("진현범");
+		numArr.add("010-4860-7047");
+		textArr.add("김용년");
+		numArr.add("010-9976-2772");
+		textArr.add("이형운");
+		numArr.add("010-4119-1273");
+		textArr.add("김 용");
+		numArr.add("010-6600-7770");
+		textArr.add("정혜림");
+		numArr.add("010-7707-0725");
 	}
 
 }// class

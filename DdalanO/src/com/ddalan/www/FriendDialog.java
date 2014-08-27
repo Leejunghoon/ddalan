@@ -23,7 +23,7 @@ public class FriendDialog extends Activity {
 	int photoFromIntent;
 
 	public FriendDialog() {
-	
+
 	}
 
 	/** Called when the activity is first created. */
@@ -45,46 +45,65 @@ public class FriendDialog extends Activity {
 
 		imageView = (ImageView) findViewById(R.id.photospace);
 
-		
-		
-		switch (photoFromIntent) {
-		
-		case 0:
-			imageView.setImageResource(R.drawable.man5);
+		System.out.println(phone);
+		int pStr = 0;
+
+		String pNoStr = phone.substring(9);
+		System.out.println("pNoStr=" + pNoStr);
+		if (pNoStr.length() == 4 || pNoStr.length() == 3
+				|| pNoStr.length() == 2) {
+
+			pStr = Integer.parseInt(pNoStr);
+		} else {
+			pStr = 6582;
+		}
+
+		switch (pStr) {
+
+		case 2207:
+			imageView.setImageResource(R.drawable.face32);
 			break;
-			
-		case 1:
-			imageView.setImageResource(R.drawable.man6);
+		case 75:
+			imageView.setImageResource(R.drawable.face10);
+			break;
+		case 6582:
+			imageView.setImageResource(R.drawable.face30);
+			break;
+		case 2085:
+			imageView.setImageResource(R.drawable.face15);
+			break;
+		case 702:
+			imageView.setImageResource(R.drawable.face21);
+			break;
+		case 5514:
+			imageView.setImageResource(R.drawable.face31);
+			break;
+		case 5408:
+			imageView.setImageResource(R.drawable.face12);
+			break;
+		case 8469:
+			imageView.setImageResource(R.drawable.face11);
+			break;
+		case 475:
+			imageView.setImageResource(R.drawable.face20);
+			break;
+		case 606:
+			imageView.setImageResource(R.drawable.face17);
+			break;
+		case 7047:
+			imageView.setImageResource(R.drawable.face13);
+			break;
+		case 7770:
+			imageView.setImageResource(R.drawable.face28);
+			break;
+		case 3458:
+			imageView.setImageResource(R.drawable.face29);
 			break;
 
-		case 2:
-			imageView.setImageResource(R.drawable.man7);
-			break;
-			
-		case 3:
-			imageView.setImageResource(R.drawable.man8);
-			break;
-			
-		case 4:
-			imageView.setImageResource(R.drawable.man9);
-			break;
-			
-		case 5:
-			imageView.setImageResource(R.drawable.woman5);
-			break;
-			
-		case 6:
-			imageView.setImageResource(R.drawable.woman6);
-			break;
-			
-		case 7:
-			imageView.setImageResource(R.drawable.woman7);
-			break;
-			
 		default:
 			imageView.setImageResource(R.drawable.woman8);
 			break;
-			
+
 		}
 
 	}
@@ -92,7 +111,8 @@ public class FriendDialog extends Activity {
 	public void btnOnClick(View view) {
 		switch (view.getId()) {
 		case R.id.btn1:
-			Toast.makeText(FriendDialog.this, "��ȭ�ɱ�", Toast.LENGTH_SHORT).show();
+			Toast.makeText(FriendDialog.this, "占쏙옙화占심깍옙", Toast.LENGTH_SHORT)
+					.show();
 			Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tel:"
 					+ phone));
 			startActivity(intent);
@@ -100,17 +120,20 @@ public class FriendDialog extends Activity {
 
 		case R.id.btn2:
 			new FaUpdate(this).execute(phone);
-			Toast.makeText(FriendDialog.this, "즐겨찾기 추가되었습니다.", Toast.LENGTH_SHORT).show();
-			
+			Toast.makeText(FriendDialog.this, "利먭꺼李얘린 異붽��섏뿀�듬땲��",
+					Toast.LENGTH_SHORT).show();
+
 			break;
 
 		case R.id.btn3:
-			Intent itt = new Intent(Intent.ACTION_PICK); // ACTION_PICK�׼��� ����ϴ�
-															// ��
+			Intent itt = new Intent(Intent.ACTION_PICK); // ACTION_PICK占쌓쇽옙占쏙옙
+															// 占쏙옙占쏙옙求占�
+															// 占쏙옙
 			itt.setData(Uri.parse("content://com.android.contacts/data/phones"));
 			startActivityForResult(itt, 0);
 
-			Toast.makeText(FriendDialog.this, "ģ�� ����", Toast.LENGTH_SHORT).show();
+			Toast.makeText(FriendDialog.this, "친占쏙옙 占쏙옙占쏙옙", Toast.LENGTH_SHORT)
+					.show();
 			break;
 
 		}

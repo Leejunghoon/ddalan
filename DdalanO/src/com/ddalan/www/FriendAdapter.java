@@ -46,14 +46,21 @@ public class FriendAdapter extends BaseAdapter {
 		return position;
 	}
 
-	public int getPhoneLastNumber(int position) {
-		int lastNum = 0;
-		String pNo = null;
+	public int getPhoneNumber(int position) {
+		String pNo = numArr.get(position);
+		System.out.println(pNo);
+		int pStr = 0;
 
-		pNo = numArr.get(position).substring(
-				(numArr.get(position).length()) - 1);
-		lastNum = Integer.parseInt(pNo);
-		return lastNum;
+		String pNoStr = pNo.substring(9);
+		System.out.println("pNoStr=" + pNoStr);
+		if (pNoStr.length() == 4 || pNoStr.length() == 3
+				|| pNoStr.length() == 2) {
+
+			pStr = Integer.parseInt(pNoStr);
+		} else {
+			pStr = 6582;
+		}
+		return pStr;
 	}
 
 	@Override
@@ -72,38 +79,46 @@ public class FriendAdapter extends BaseAdapter {
 		checkView = (ImageView) convertView.findViewById(R.id.checkImg);
 		checkView.setImageResource(R.drawable.ddalan);
 
-		switch (getPhoneLastNumber(position)) {
+		switch (getPhoneNumber(position)) {
 
-		case 0:
-			imageView.setImageResource(R.drawable.man5);
+		case 2207:
+			imageView.setImageResource(R.drawable.face32);
 			break;
-
-		case 1:
-			imageView.setImageResource(R.drawable.man6);
+		case 75:
+			imageView.setImageResource(R.drawable.face10);
 			break;
-
-		case 2:
-			imageView.setImageResource(R.drawable.man7);
+		case 6582:
+			imageView.setImageResource(R.drawable.face30);
 			break;
-
-		case 3:
-			imageView.setImageResource(R.drawable.man8);
+		case 2085:
+			imageView.setImageResource(R.drawable.face15);
 			break;
-
-		case 4:
-			imageView.setImageResource(R.drawable.man9);
+		case 702:
+			imageView.setImageResource(R.drawable.face21);
 			break;
-
-		case 5:
-			imageView.setImageResource(R.drawable.woman5);
+		case 5514:
+			imageView.setImageResource(R.drawable.face31);
 			break;
-
-		case 6:
-			imageView.setImageResource(R.drawable.woman6);
+		case 5408:
+			imageView.setImageResource(R.drawable.face12);
 			break;
-
-		case 7:
-			imageView.setImageResource(R.drawable.woman7);
+		case 8469:
+			imageView.setImageResource(R.drawable.face11);
+			break;
+		case 475:
+			imageView.setImageResource(R.drawable.face20);
+			break;
+		case 606:
+			imageView.setImageResource(R.drawable.face17);
+			break;
+		case 7047:
+			imageView.setImageResource(R.drawable.face13);
+			break;
+		case 7770:
+			imageView.setImageResource(R.drawable.face28);
+			break;
+		case 3458:
+			imageView.setImageResource(R.drawable.face29);
 			break;
 
 		default:
