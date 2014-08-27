@@ -8,8 +8,10 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -22,7 +24,6 @@ public class HistoryTab extends Fragment {
 	// 1.data �좎룞�쇿뜝�숈삕
 	ArrayList<String> nameArr = new ArrayList<String>();
 	ArrayList<String> numArr = new ArrayList<String>();
-
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -42,8 +43,6 @@ public class HistoryTab extends Fragment {
 
 		// 3.AdapterView
 		list.setAdapter(MyAdapter);
-		
-		
 
 		return rootView;
 	}
@@ -52,12 +51,33 @@ public class HistoryTab extends Fragment {
 
 		nameArr.add("조현성님으로부터 따란이 도착했어요.");
 		nameArr.add("남기환님으로부터 따란이 도착했어요.");
+		nameArr.add("남기환님으로부터 따란이 도착했어요.");
+		nameArr.add("남기환님으로부터 따란이 도착했어요.");
+		nameArr.add("조현성님으로부터 따란이 도착했어요.");
+		nameArr.add("조현성님으로부터 따란이 도착했어요.");
+		nameArr.add("조현성님으로부터 따란이 도착했어요.");
+		nameArr.add("조현성님으로부터 따란이 도착했어요.");
+		nameArr.add("조현성님으로부터 따란이 도착했어요.");
+		nameArr.add("조현성님으로부터 따란이 도착했어요.");
+		nameArr.add("남기환님으로부터 따란이 도착했어요.");
+		nameArr.add("남기환님으로부터 따란이 도착했어요.");
+		nameArr.add("남기환님으로부터 따란이 도착했어요.");
 
-		numArr.add("4:10");
 		numArr.add("4:11");
+		numArr.add("4:12");
+		numArr.add("4:15");
+		numArr.add("4:35");
+		numArr.add("4:43");
+		numArr.add("4:55");
+		numArr.add("5:33");
+		numArr.add("5:55");
+		numArr.add("6:10");
+		numArr.add("6:11");
+		numArr.add("6:20");
+		numArr.add("6:21");
+		numArr.add("6:21");
 
 	}
-
 
 	class MyListAdapter extends BaseAdapter {
 
