@@ -52,7 +52,7 @@
             android:configChanges="keyboardHidden"
             android:finishOnCloseSystemDialogs="true"
             android:multiprocess="true"
-            android:theme="@android:style/Theme.Dialog"
+            android:theme="@android:style/Theme.DeviceDefault.Dialog.NoActionBar"
             android:windowSoftInputMode="stateHidden" >
           
         </activity>
