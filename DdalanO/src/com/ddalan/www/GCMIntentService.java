@@ -78,7 +78,7 @@ public class GCMIntentService extends GCMBaseIntentService {
 				GCMIntentService.this);
 		builder.setSmallIcon(R.drawable.ddalan);
 		builder.setContentTitle("따란");
-		builder.setContentText(ticker + "님으로부터 메세지가 도착했어요");
+		builder.setContentText("따란 메세지가 도착했어요!");
 		builder.setVibrate(new long[] { 50, 50, 50, 50 });
 		builder.setAutoCancel(true);
 		builder.setSound(getSound());

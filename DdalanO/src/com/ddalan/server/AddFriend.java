@@ -73,7 +73,7 @@ public class AddFriend extends AsyncTask<Void, Void, Void> {
 			
 			
 			// Post°´Ã¼ »ý¼º
-			HttpPost httpPost = new HttpPost("http://192.168.0.79:8080/addFriend.do");
+			HttpPost httpPost = new HttpPost("http://192.168.43.63:8080/addFriend.do");
 		
 			try {
 				UrlEncodedFormEntity entity = new UrlEncodedFormEntity(post,"UTF-8");

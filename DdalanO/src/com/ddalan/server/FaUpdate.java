@@ -5,7 +5,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 
 import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
@@ -34,27 +33,27 @@ public class FaUpdate extends AsyncTask<String, Void, Void> {
 		}
 
 		protected void onPostExecute(String result) {
-			// ��� �۾��� ��ġ�� ������ �� (�޼ҵ� ���)
+			// 占쏙옙占�占쌜억옙占쏙옙 占쏙옙치占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙 (占쌨소듸옙 占쏙옙占�
 		}
 		
-		// ���� ����ϴ� �κ�
+		// 占쏙옙占쏙옙 占쏙옙占쏙옙求占�占싸븝옙
 		public String executeClient(String num) {
 			InputStream content;
 			ArrayList<NameValuePair> post = new ArrayList<NameValuePair>();
 			post.add(new BasicNameValuePair("phone", num));
 			
 		
-			// ���� HttpClient ��ü ��
+			// 占쏙옙占쏙옙 HttpClient 占쏙옙체 占쏙옙
 			HttpClient client = new DefaultHttpClient();
 			
-			// ��ü ���� ���� �κ�, ���� �ִ�ð� ���
+			// 占쏙옙체 占쏙옙占쏙옙 占쏙옙占쏙옙 占싸븝옙, 占쏙옙占쏙옙 占쌍댐옙챨占�占쏙옙占�
 			HttpParams params = client.getParams();
 			HttpConnectionParams.setConnectionTimeout(params, 5000);
 			HttpConnectionParams.setSoTimeout(params, 5000);
 			
 			
 			// Post
-			HttpPost httpPost = new HttpPost("http://192.168.0.79:8080/FaUpdate.do");
+			HttpPost httpPost = new HttpPost("http://192.168.43.63:8080/FaUpdate.do");
 			
 			try {
 				UrlEncodedFormEntity entity = new UrlEncodedFormEntity(post, "UTF-8");

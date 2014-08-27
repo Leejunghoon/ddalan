@@ -34,7 +34,7 @@ public class SettingsTab extends PreferenceFragment {
 						return false;
 					}
 				});
-		setProfile.setIcon(R.drawable.woman);
+		setProfile.setIcon(R.drawable.man6);
 
 		Preference syncList = (Preference) findPreference("syncList");
 		syncList.setOnPreferenceClickListener(new OnPreferenceClickListener() {
@@ -63,10 +63,10 @@ public class SettingsTab extends PreferenceFragment {
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		super.onActivityResult(requestCode, resultCode, data);
 		System.out.println("onActivityResult");
-		if(requestCode==GET_PICTURE_URI){
+		if (requestCode == GET_PICTURE_URI) {
 			System.out.println("if 1");
 			setProfile.setIcon(R.drawable.angela);
-	}
+		}
 
-}
+	}
 }

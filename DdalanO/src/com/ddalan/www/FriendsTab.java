@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import android.app.Fragment;
 import android.content.ContentResolver;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.LayoutInflater;
@@ -15,7 +14,6 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import com.ddalan.gcm.SendPush;
 
@@ -103,42 +101,39 @@ public class FriendsTab extends Fragment {
 		 * .Phone.DISPLAY_NAME)); number = phones .getString(phones
 		 * .getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
 		 */
-		textArr.add("이정훈");
-		numArr.add("010-4811-0702");
-		textArr.add("조현성");
-		numArr.add("010-4173-6582");
-		textArr.add("남기환");
-		numArr.add("010-5605-3458");
-		textArr.add("이슬이");
-		numArr.add("010-7111-2207");
-		textArr.add("김새봄");
-		numArr.add("010-5113-5408");
-		textArr.add("이기쁨");
-		numArr.add("010-4274-0075");
-		textArr.add("임새샘");
-		numArr.add("010-9972-5514");
 		textArr.add("곽재호");
-		numArr.add("010-9525-8390");
-		textArr.add("김영길");
-		numArr.add("010-3586-8469");
-		textArr.add("박종호");
-		numArr.add("010-5294-2085");
-		textArr.add("채예지");
-		numArr.add("010-5474-0475");
+		numArr.add("01095258390");
 		textArr.add("길민경");
-		numArr.add("010-5541-7537");
-		textArr.add("노영수");
-		numArr.add("010-2912-0606");
-		textArr.add("진현범");
-		numArr.add("010-4860-7047");
+		numArr.add("01055417537");
+		textArr.add("김새봄");
+		numArr.add("01051135408");
 		textArr.add("김용년");
-		numArr.add("010-9976-2772");
+		numArr.add("01099762772");
+		textArr.add("김영길");
+		numArr.add("01035868469");
+		textArr.add("남기환");
+		numArr.add("01056053458");
+		textArr.add("노영수");
+		numArr.add("01029120606");
+		textArr.add("박종호");
+		numArr.add("01052942085");
+		textArr.add("이기쁨");
+		numArr.add("01042740075");
+		textArr.add("이슬이");
+		numArr.add("01071112207");
+		textArr.add("이정훈");
+		numArr.add("01048110702");
 		textArr.add("이형운");
-		numArr.add("010-4119-1273");
-		textArr.add("김 용");
-		numArr.add("010-6600-7770");
+		numArr.add("01041191273");
+		textArr.add("임새샘");
+		numArr.add("01099725514");
+		textArr.add("채예지");
+		numArr.add("01054740475");
 		textArr.add("정혜림");
-		numArr.add("010-7707-0725");
+		numArr.add("01077070725");
+		textArr.add("진현범");
+		numArr.add("01048607047");
+
 	}
 
 }// class

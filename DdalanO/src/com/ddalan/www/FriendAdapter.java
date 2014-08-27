@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,6 +18,10 @@ public class FriendAdapter extends BaseAdapter {
 	// 텍스트 배열 선언
 	ArrayList<String> textArr = new ArrayList<String>();
 	ArrayList<String> numArr = new ArrayList<String>();
+
+	Button dailyBtn;
+	Button weeklyBtn;
+	Button monthlyBtn;
 
 	@SuppressWarnings("unused")
 	private Context mContext;
@@ -51,7 +56,7 @@ public class FriendAdapter extends BaseAdapter {
 		System.out.println(pNo);
 		int pStr = 0;
 
-		String pNoStr = pNo.substring(9);
+		String pNoStr = pNo.substring(7);
 		System.out.println("pNoStr=" + pNoStr);
 		if (pNoStr.length() == 4 || pNoStr.length() == 3
 				|| pNoStr.length() == 2) {
@@ -63,6 +68,14 @@ public class FriendAdapter extends BaseAdapter {
 		return pStr;
 	}
 
+	/*
+	 * public int getPhoneForCheck(int position) {
+	 * System.out.println("getPhoneForCheck!!!!!!"); String pNo =
+	 * numArr.get(position); System.out.println(pNo); int pStr = 0; String
+	 * pNoStrForCheck = pNo.substring(12); System.out.println("pNoStrForCheck="
+	 * + pNoStrForCheck); if (pNoStrForCheck.length() == 1) { pStr =
+	 * Integer.parseInt(pNoStrForCheck); } else { pStr = 6; } return pStr; }
+	 */
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		ImageView imageView;
@@ -77,8 +90,7 @@ public class FriendAdapter extends BaseAdapter {
 		imageView = (ImageView) convertView.findViewById(R.id.frface);
 		textView = (TextView) convertView.findViewById(R.id.frname);
 		checkView = (ImageView) convertView.findViewById(R.id.checkImg);
-		checkView.setImageResource(R.drawable.ddalan);
-
+		checkView.setImageResource(R.drawable.emptyimg);
 		switch (getPhoneNumber(position)) {
 
 		case 2207:
@@ -122,13 +134,17 @@ public class FriendAdapter extends BaseAdapter {
 			break;
 
 		default:
-			imageView.setImageResource(R.drawable.woman8);
+			imageView.setImageResource(R.drawable.man6);
 			break;
 
 		}
 
+		/*
+
+*/
 		textView.setText(textArr.get(position));
 
 		return convertView;
 	}
+
 }

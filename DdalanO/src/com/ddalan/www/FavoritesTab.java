@@ -61,15 +61,16 @@ public class FavoritesTab extends Fragment {
 
 		rareView.setOnItemClickListener(new OnItemClickListener() {
 
-			// 移쒎뜝�숈삕(Item)�좎룞���좎룞�쇿뜝�숈삕�좎룞���좎룞��Click) �좎룞�쇿뜝�숈삕�좎룞���좎룞�쇿뜝�숈삕�좎룞�쇿뜝�숈삕 �좎뙣�뚮벝��
+			// 移쒎뜝�숈삕(Item)�좎룞���좎룞�쇿뜝�숈삕�좎룞���좎룞��Click)
+			// �좎룞�쇿뜝�숈삕�좎룞���좎룞�쇿뜝�숈삕�좎룞�쇿뜝�숈삕 �좎뙣�뚮벝��
 			// �좎룞�쇿뜝�숈삕. �좎룞�쇿뜝�숈삕�좎룞���좎뜲�ㅽ듃.
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 
 				Toast.makeText(getActivity(),
-						rareNameArr.get(position) + "占쎄퀡���ワ옙占쏙옙",
-						Toast.LENGTH_SHORT).show();
+						rareNameArr.get(position) + "gggg", Toast.LENGTH_SHORT)
+						.show();
 
 			}
 
@@ -103,7 +104,8 @@ public class FavoritesTab extends Fragment {
 				favNumArr));
 		favView.setOnItemClickListener(new OnItemClickListener() {
 
-			// 移쒎뜝�숈삕(Item)�좎룞���좎룞�쇿뜝�숈삕�좎룞���좎룞��Click) �좎룞�쇿뜝�숈삕�좎룞���좎룞�쇿뜝�숈삕�좎룞�쇿뜝�숈삕 �좎뙣�뚮벝��
+			// 移쒎뜝�숈삕(Item)�좎룞���좎룞�쇿뜝�숈삕�좎룞���좎룞��Click)
+			// �좎룞�쇿뜝�숈삕�좎룞���좎룞�쇿뜝�숈삕�좎룞�쇿뜝�숈삕 �좎뙣�뚮벝��
 			// �좎룞�쇿뜝�숈삕. �좎룞�쇿뜝�숈삕�좎룞���좎뜲�ㅽ듃.
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
@@ -111,8 +113,8 @@ public class FavoritesTab extends Fragment {
 
 				System.out.println("�좎룞�쇿뜝�숈삕�좎룞��");
 				Toast.makeText(getActivity(),
-						favNameArr.get(position) + "占쎌쥚源�옙占�", Toast.LENGTH_SHORT)
-						.show();
+						favNameArr.get(position) + "占쎌쥚源�옙占�",
+						Toast.LENGTH_SHORT).show();
 
 			}
 
@@ -127,7 +129,8 @@ public class FavoritesTab extends Fragment {
 				String picStr = favNumArr.get(position);
 				int picNo = Integer.parseInt(picStr.substring(picStr.length() - 1));
 
-				// �좎룞�쇿뜝�숈삕�좎룞���좎룞�숉떚�좎룞�숉떚(WebDialog) �좎룞�숉떚�좎룞�숉떚�좎룞���좎룞�쇿뜝�숈삕�좎떬�먯삕.
+				// �좎룞�쇿뜝�숈삕�좎룞���좎룞�숉떚�좎룞�숉떚(WebDialog)
+				// �좎룞�숉떚�좎룞�숉떚�좎룞���좎룞�쇿뜝�숈삕�좎떬�먯삕.
 				Intent intent = new Intent(getActivity(), FriendDialog.class);
 				intent.putExtra("position", position);
 				intent.putExtra("name", favNameArr.get(position));
@@ -156,7 +159,7 @@ public class FavoritesTab extends Fragment {
 
 			// Post�좎룞�숈껜 �좎룞��
 			HttpPost httpPost = new HttpPost(
-					"http://192.168.0.79:8080/FavFriends.do");
+					"http://192.168.43.63:8080/FavFriends.do");
 			try {
 
 				HttpResponse response = client.execute(httpPost);
@@ -207,20 +210,20 @@ public class FavoritesTab extends Fragment {
 		String[] nameArr = name.split(", ");
 		String[] phoneArr = phone.split(", ");
 
-		for (int i = 0; i < nameArr.length; i++) {
-			favNameArr.add(nameArr[i]);
-			favNumArr.add(phoneArr[i]);
+		if (favNameArr.isEmpty()) {
+			for (int i = 0; i < nameArr.length; i++) {
+				favNameArr.add(nameArr[i]);
+				favNumArr.add(phoneArr[i]);
+			}
+		} else if (!favNameArr.isEmpty()) {
+			favNameArr.removeAll(favNameArr);
+			favNumArr.removeAll(favNumArr);
+			for (int i = 0; i < nameArr.length; i++) {
+				favNameArr.add(nameArr[i]);
+				favNumArr.add(phoneArr[i]);
+			}
 
 		}
 
 	}
-
-	/*
-	 * @Override public void onDestroyView() { // TODO Auto-generated method
-	 * stub super.onDestroyView(); favNameArr.removeAll(favNameArr);
-	 * favNumArr.removeAll(favNumArr);
-	 * 
-	 * }
-	 */
-
 }

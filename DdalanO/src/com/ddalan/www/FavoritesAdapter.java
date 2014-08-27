@@ -52,7 +52,7 @@ public class FavoritesAdapter extends BaseAdapter {
 		System.out.println(pNo);
 		int pStr = 0;
 
-		String pNoStr = pNo.substring(9);
+		String pNoStr = pNo.substring(7);
 		System.out.println("pNoStr=" + pNoStr);
 		if (pNoStr.length() == 4 || pNoStr.length() == 3
 				|| pNoStr.length() == 2) {
@@ -118,7 +118,7 @@ public class FavoritesAdapter extends BaseAdapter {
 			break;
 
 		default:
-			favFriendPic.setImageResource(R.drawable.woman8);
+			favFriendPic.setImageResource(R.drawable.man6);
 			break;
 
 		}

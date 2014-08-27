@@ -4,6 +4,7 @@ import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.android.gcm.GCMRegistrar;
 
@@ -38,13 +39,12 @@ public class Sp extends Activity implements Runnable {
 		CDialog.hideLoading();
 
 		// 첫占싸깍옙占쏙옙 & 占쏙옙占쏙옙 占쏙옙占쏙옙占�화占쏙옙 占싱듸옙 占쏙옙占쏙옙 //
-		Intent intent = new Intent(this, MainActivity.class);
-		startActivity(intent);
+
 		// GCM DeviceID 占쏙옙占�
 		final String regId = GCMRegistrar
 				.getRegistrationId(getApplicationContext());
 		// 占쏙옙溝占�ID占쏙옙 占쏙옙占쏙옙占쏙옙 ID占쏙옙占쏙옙 占쏙옙占심니댐옙
-		/*if (regId.equals("") || regId == null) {
+		if (regId.equals("") || regId == null) {
 			GCMRegistrar.register(getApplicationContext(), SENDER_ID);
 			Intent intent = new Intent(this, WebViewActivity.class);
 			startActivity(intent);
@@ -52,9 +52,10 @@ public class Sp extends Activity implements Runnable {
 			Intent intent = new Intent(this, MainActivity.class);
 			startActivity(intent);
 			Log.w(TAG, "deviceID Registered : " + regId);
-		}*/
+		}
 
-		// 占쌤몌옙占쏙옙 Back占쏙옙튼占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙, 占쏙옙트占쏙옙 화占쏙옙占쏙옙占쏙옙 占쏙옙占싣울옙占쏙옙 占십듸옙占쏙옙 占쏙옙트占쏙옙 화占쏙옙占쏙옙 占쏙옙占쏙옙
+		// 占쌤몌옙占쏙옙 Back占쏙옙튼占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙, 占쏙옙트占쏙옙 화占쏙옙占쏙옙占쏙옙 占쏙옙占싣울옙占쏙옙
+		// 占십듸옙占쏙옙 占쏙옙트占쏙옙 화占쏙옙占쏙옙 占쏙옙占쏙옙
 		finish();
 	}
 

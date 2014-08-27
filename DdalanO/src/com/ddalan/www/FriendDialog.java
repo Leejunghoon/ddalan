@@ -16,6 +16,7 @@ public class FriendDialog extends Activity {
 	String name;
 	String phone;
 	String regId;
+	String[] phoneArr;
 	TextView nameView;
 	TextView numberView;
 	ImageView imageView;
@@ -48,8 +49,8 @@ public class FriendDialog extends Activity {
 		System.out.println(phone);
 		int pStr = 0;
 
-		String pNoStr = phone.substring(9);
-		System.out.println("pNoStr=" + pNoStr);
+		String pNoStr = phone.substring(7);
+		System.out.println("pNoStr에 들어있는 값은 = " + pNoStr);
 		if (pNoStr.length() == 4 || pNoStr.length() == 3
 				|| pNoStr.length() == 2) {
 
@@ -101,7 +102,7 @@ public class FriendDialog extends Activity {
 			break;
 
 		default:
-			imageView.setImageResource(R.drawable.woman8);
+			imageView.setImageResource(R.drawable.man6);
 			break;
 
 		}
@@ -111,8 +112,6 @@ public class FriendDialog extends Activity {
 	public void btnOnClick(View view) {
 		switch (view.getId()) {
 		case R.id.btn1:
-			Toast.makeText(FriendDialog.this, "占쏙옙화占심깍옙", Toast.LENGTH_SHORT)
-					.show();
 			Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("tel:"
 					+ phone));
 			startActivity(intent);
@@ -120,7 +119,7 @@ public class FriendDialog extends Activity {
 
 		case R.id.btn2:
 			new FaUpdate(this).execute(phone);
-			Toast.makeText(FriendDialog.this, "利먭꺼李얘린 異붽��섏뿀�듬땲��",
+			Toast.makeText(FriendDialog.this, "즐겨찾기에 추가되었습니다.",
 					Toast.LENGTH_SHORT).show();
 
 			break;
@@ -132,7 +131,7 @@ public class FriendDialog extends Activity {
 			itt.setData(Uri.parse("content://com.android.contacts/data/phones"));
 			startActivityForResult(itt, 0);
 
-			Toast.makeText(FriendDialog.this, "친占쏙옙 占쏙옙占쏙옙", Toast.LENGTH_SHORT)
+			Toast.makeText(FriendDialog.this, "삭제되었습니다.", Toast.LENGTH_SHORT)
 					.show();
 			break;
 

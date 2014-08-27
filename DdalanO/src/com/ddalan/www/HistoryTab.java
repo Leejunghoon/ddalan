@@ -48,32 +48,10 @@ public class HistoryTab extends Fragment {
 	public void getHisNumber() {
 
 		nameArr.add("조현성님으로부터 따란이 도착했어요.");
-		nameArr.add("남기환님으로부터 따란이 도착했어요.");
-		nameArr.add("남기환님으로부터 따란이 도착했어요.");
-		nameArr.add("남기환님으로부터 따란이 도착했어요.");
-		nameArr.add("조현성님으로부터 따란이 도착했어요.");
-		nameArr.add("조현성님으로부터 따란이 도착했어요.");
-		nameArr.add("조현성님으로부터 따란이 도착했어요.");
-		nameArr.add("조현성님으로부터 따란이 도착했어요.");
-		nameArr.add("조현성님으로부터 따란이 도착했어요.");
-		nameArr.add("조현성님으로부터 따란이 도착했어요.");
-		nameArr.add("남기환님으로부터 따란이 도착했어요.");
-		nameArr.add("남기환님으로부터 따란이 도착했어요.");
-		nameArr.add("남기환님으로부터 따란이 도착했어요.");
+		nameArr.add("이정훈님으로부터 따란이 도착했어요.");
 
-		numArr.add("4:11");
-		numArr.add("4:12");
-		numArr.add("4:15");
-		numArr.add("4:35");
-		numArr.add("4:43");
-		numArr.add("4:55");
-		numArr.add("5:33");
-		numArr.add("5:55");
-		numArr.add("6:10");
-		numArr.add("6:11");
-		numArr.add("6:20");
-		numArr.add("6:21");
-		numArr.add("6:21");
+		numArr.add("DATE 2014/08/27 4:12");
+		numArr.add("DATE 2014/08/27 4:13");
 
 	}
 

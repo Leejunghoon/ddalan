@@ -6,8 +6,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.webkit.WebView;
@@ -31,7 +29,7 @@ public class WebViewActivity extends Activity {
 		
 	    String INFO_URL;
 		
-		INFO_URL ="http://192.168.0.79:8080/index.jsp";
+		INFO_URL ="http://192.168.43.63:8080/index.jsp";
 		
 		webView = (WebView) findViewById(R.id.webView1);
 		//안드로드 웹뷰에 컨텐츠 사이즈가 안맞는 문제

@@ -10,8 +10,8 @@ import android.support.v4.app.FragmentActivity;
 public class MainActivity extends FragmentActivity {
 
 	ActionBar.Tab Tab1, Tab2, Tab3, Tab4;
-	Fragment fragmentTab1 = new FriendsTab();
-	Fragment fragmentTab2 = new FavoritesTab();
+	Fragment fragmentTab1 = new FavoritesTab();
+	Fragment fragmentTab2 = new FriendsTab();
 	Fragment fragmentTab3 = new HistoryTab();
 	Fragment fragmentTab4 = new SettingsTab();
 
@@ -25,7 +25,7 @@ public class MainActivity extends FragmentActivity {
 		actionBar.setBackgroundDrawable(new ColorDrawable(Color
 				.parseColor("#ffcd00")));
 
-		actionBar.setDisplayShowHomeEnabled(true);
+		actionBar.setDisplayShowHomeEnabled(false);
 		actionBar.setDisplayShowTitleEnabled(true);
 
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
