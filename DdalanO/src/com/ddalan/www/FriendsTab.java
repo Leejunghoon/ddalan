@@ -56,10 +56,14 @@ public class FriendsTab extends Fragment {
 			public void onItemClick(AdapterView<?> parent, View view,
 					int position, long id) {
 				new SendPush(getActivity()).execute(numArr.get(position));
-
+				
+				Intent intent = new Intent(getActivity(), Frame_animation.class);
+				
+				startActivity(intent);
+/*
 				Toast.makeText(getActivity(),
 						textArr.get(position) + "에게 따란을 전송합니다.",
-						Toast.LENGTH_SHORT).show();
+						Toast.LENGTH_SHORT).show();*/
 			}
 
 		});

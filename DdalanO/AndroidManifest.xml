@@ -46,6 +46,17 @@
             android:theme="@android:style/Theme.Dialog"
             android:windowSoftInputMode="stateHidden" >
         </activity>
+        
+         <activity
+            android:name=".Frame_animation"
+            android:configChanges="keyboardHidden"
+            android:finishOnCloseSystemDialogs="true"
+            android:multiprocess="true"
+            android:theme="@android:style/Theme.Dialog"
+            android:windowSoftInputMode="stateHidden" >
+          
+        </activity>
+        
         <activity android:name="com.ddalan.www.WebViewActivity" />
         
         <activity android:name="com.ddalan.www.MainActivity" >
