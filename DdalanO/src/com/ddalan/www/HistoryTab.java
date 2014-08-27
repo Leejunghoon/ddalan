@@ -10,7 +10,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -42,9 +41,6 @@ public class HistoryTab extends Fragment {
 
 		// 3.AdapterView
 		list.setAdapter(MyAdapter);
-		
-		Button btn=(Button)getActivity().findViewById(R.id.change);
-		btn.setText("보낸 따란");
 
 		return rootView;
 	}
@@ -146,6 +142,8 @@ public class HistoryTab extends Fragment {
 			return convertView;
 		}
 	}
+	
+	
 
 
 
